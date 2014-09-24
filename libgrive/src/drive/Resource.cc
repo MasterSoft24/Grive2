@@ -45,6 +45,8 @@
 // for debugging
 #include <iostream>
 
+#include <fnmatch.h>
+
 namespace gr { namespace v1 {
 
 // hard coded XML file
@@ -364,12 +366,72 @@ Resource* Resource::FindChild( const std::string& name )
 	return 0 ;
 }
 
+
+std::string ptrn="./11/copy-fs";// exclude from sync
+
+bool PartialMatchTest(std::string pattern,std::string path){
+    
+    int full_match = fnmatch(pattern.c_str(),path.c_str(),FNM_FILE_NAME|FNM_NOESCAPE);
+    
+    if(full_match == 0){
+        return true;// full match by patterm
+    }
+    else{
+        int path_len=path.size();
+        int patt_len=pattern.size();
+        int len=path_len+patt_len;
+        
+        for(int i=0;i<len;i++){ 
+            
+            if(path[i] == pattern[i]){
+                path_len--;
+                patt_len--;
+                
+                if(path_len < 0){// the path completely contains in a pattern as initial substring
+                    return true;
+                }
+                
+                if(patt_len < 0){
+                    return true;
+                }
+            }
+            else{
+                return false;
+            }
+        }
+        
+    }
+    return false;
+}
+
+//=======================================
+
 // try to change the state to "sync"
 void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options )
 {
 	assert( m_state != unknown ) ;
 	assert( !IsRoot() || m_state == sync ) ;	// root folder is already synced
 	
+        
+// ==== EXCLUDING FROM SUNC =====    
+        
+        // restore full canonical path
+        std::string fp=this->Name();
+        Resource* current=this;
+        while((current=current->m_parent)!=0){           
+            fp=current->Name()+"/"+fp;
+        }
+        
+        if(fp!="."){
+            int res=fnmatch(ptrn.c_str(),fp.c_str(),FNM_FILE_NAME|FNM_NOESCAPE|FNM_LEADING_DIR|FNM_PERIOD);
+            if( (res)!=FNM_NOMATCH ){
+                return;
+            }
+            
+        }
+        
+//===============================
+        
 	SyncSelf( http, options ) ;
 	
 	// we want the server sync time, so we will take the server time of the last file uploaded to store as the sync time
@@ -385,12 +447,20 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
 void Resource::SyncSelf( http::Agent* http, const Json& options )
 {
 	assert( !IsRoot() || m_state == sync ) ;	// root is always sync
-	assert( IsRoot() || http == 0 || fs::is_directory( m_parent->Path() ) ) ;
+	//assert( IsRoot() || http == 0 || fs::is_directory( m_parent->Path() ) ) ;
 	assert( IsRoot() || m_parent->m_state != remote_deleted ) ;
 	assert( IsRoot() || m_parent->m_state != local_deleted ) ;
 
 	const fs::path path = Path() ;
 
+       // m_state=sync;
+
+//        if(path.string()=="./fuck")m_state=my;
+//        if(path.string()=="./fuck/tst"){
+//            m_state=my; 
+//        }
+//        if(path.string()=="./fuck/xbox-1")m_state=my;        
+        
 	switch ( m_state )
 	{
 	case local_new :
