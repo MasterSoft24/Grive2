@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="/home/ms/NetBeansProjects/grive" name="0">
+      <df name="bgrive">
+        <df name="CMakeFiles">
+          <df name="bgrive_executable.dir">
+            <df name="src">
+            </df>
+          </df>
+        </df>
+        <df name="src">
+          <in>DriveModel.cc</in>
+          <in>DriveModel.hh</in>
+          <in>MainWnd.cc</in>
+          <in>MainWnd.hh</in>
+          <in>main.cc</in>
+          <in>moc_MainWnd.cxx</in>
+        </df>
+        <df name="ui">
+        </df>
+        <in>ui_MainWindow.h</in>
+      </df>
+      <df name="build">
+        <df name="bgrive">
+          <df name="CMakeFiles">
+            <df name="bgrive_executable.dir">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="src">
+          </df>
+        </df>
+        <df name="CMakeFiles">
+          <df name="3.0.2">
+            <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
+            </df>
+            <df name="CompilerIdCXX">
+              <in>CMakeCXXCompilerId.cpp</in>
+            </df>
+          </df>
+          <df name="CMakeTmp">
+          </df>
+        </df>
+        <df name="grive">
+          <df name="CMakeFiles">
+            <df name="grive_executable.dir">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="libgrive">
+          <df name="CMakeFiles">
+            <df name="btest.dir">
+              <df name="test">
+                <df name="btest">
+                </df>
+              </df>
+            </df>
+            <df name="grive.dir">
+              <df name="src">
+                <df name="drive">
+                </df>
+                <df name="drive2">
+                </df>
+                <df name="http">
+                </df>
+                <df name="json">
+                </df>
+                <df name="protocol">
+                </df>
+                <df name="util">
+                  <df name="log">
+                  </df>
+                </df>
+                <df name="xml">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="cmake">
+        <df name="Modules">
+        </df>
+      </df>
+      <df name="CMakeFiles">
+        <df name="3.0.2">
+          <df name="CompilerIdC">
+            <in>CMakeCCompilerId.c</in>
+          </df>
+          <df name="CompilerIdCXX">
+            <in>CMakeCXXCompilerId.cpp</in>
+          </df>
+        </df>
+        <df name="CMakeTmp">
+        </df>
+      </df>
+      <df name="grive">
+        <df name="CMakeFiles">
+          <df name="grive_executable.dir">
+            <df name="src">
+            </df>
+          </df>
+        </df>
+        <df name="doc">
+        </df>
+        <df name="src">
+          <in>main.cc</in>
+        </df>
+      </df>
+      <df name="icon">
+        <df name="128x128">
+        </df>
+        <df name="16x16">
+        </df>
+        <df name="22x22">
+        </df>
+        <df name="256x256">
+        </df>
+        <df name="32x32">
+        </df>
+        <df name="48x48">
+        </df>
+        <df name="64x64">
+        </df>
+      </df>
+      <df name="libgrive">
+        <df name="CMakeFiles">
+          <df name="btest.dir">
+            <df name="test">
+              <df name="btest">
+              </df>
+            </df>
+          </df>
+          <df name="grive.dir">
+            <df name="src">
+              <df name="drive">
+              </df>
+              <df name="drive2">
+              </df>
+              <df name="http">
+              </df>
+              <df name="json">
+              </df>
+              <df name="protocol">
+              </df>
+              <df name="util">
+                <df name="log">
+                </df>
+              </df>
+              <df name="xml">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="src">
+          <df name="bfd">
+            <in>Addr.hh</in>
+            <in>Backtrace.cc</in>
+            <in>Backtrace.hh</in>
+            <in>Debug.cc</in>
+            <in>Debug.hh</in>
+            <in>SymbolInfo.cc</in>
+            <in>SymbolInfo.hh</in>
+          </df>
+          <df name="drive">
+            <in>CommonUri.cc</in>
+            <in>CommonUri.hh</in>
+            <in>Drive.cc</in>
+            <in>Drive.hh</in>
+            <in>Entry.cc</in>
+            <in>Entry.hh</in>
+            <in>Feed.cc</in>
+            <in>Feed.hh</in>
+            <in>Resource.cc</in>
+            <in>Resource.hh</in>
+            <in>ResourceTree.cc</in>
+            <in>ResourceTree.hh</in>
+            <in>State.cc</in>
+            <in>State.hh</in>
+          </df>
+          <df name="drive2">
+            <in>CommonUri.hh</in>
+            <in>Drive.cc</in>
+            <in>Drive.hh</in>
+            <in>Feed.cc</in>
+            <in>Feed.hh</in>
+            <in>Resource.cc</in>
+            <in>Resource.hh</in>
+          </df>
+          <df name="http">
+            <in>Agent.hh</in>
+            <in>CurlAgent.cc</in>
+            <in>CurlAgent.hh</in>
+            <in>Download.cc</in>
+            <in>Download.hh</in>
+            <in>Error.hh</in>
+            <in>Header.cc</in>
+            <in>Header.hh</in>
+            <in>ResponseLog.cc</in>
+            <in>ResponseLog.hh</in>
+            <in>StringResponse.cc</in>
+            <in>StringResponse.hh</in>
+            <in>XmlResponse.cc</in>
+            <in>XmlResponse.hh</in>
+          </df>
+          <df name="json">
+            <in>JsonParser.cc</in>
+            <in>JsonParser.hh</in>
+            <in>JsonWriter.cc</in>
+            <in>JsonWriter.hh</in>
+            <in>Val.cc</in>
+            <in>Val.hh</in>
+            <in>ValBuilder.cc</in>
+            <in>ValBuilder.hh</in>
+            <in>ValResponse.cc</in>
+            <in>ValResponse.hh</in>
+            <in>ValVisitor.hh</in>
+          </df>
+          <df name="protocol">
+            <in>AuthAgent.cc</in>
+            <in>AuthAgent.hh</in>
+            <in>Json.cc</in>
+            <in>Json.hh</in>
+            <in>JsonResponse.cc</in>
+            <in>JsonResponse.hh</in>
+            <in>OAuth2.cc</in>
+            <in>OAuth2.hh</in>
+          </df>
+          <df name="util">
+            <df name="log">
+              <in>CommonLog.cc</in>
+              <in>CommonLog.hh</in>
+              <in>CompositeLog.cc</in>
+              <in>CompositeLog.hh</in>
+              <in>DefaultLog.cc</in>
+              <in>DefaultLog.hh</in>
+              <in>Log.cc</in>
+              <in>Log.hh</in>
+            </df>
+            <in>CArray.hh</in>
+            <in>Config.cc</in>
+            <in>Config.hh</in>
+            <in>Crypt.cc</in>
+            <in>Crypt.hh</in>
+            <in>DataStream.hh</in>
+            <in>DateTime.cc</in>
+            <in>DateTime.hh</in>
+            <in>Destroy.hh</in>
+            <in>Exception.cc</in>
+            <in>Exception.hh</in>
+            <in>File.cc</in>
+            <in>File.hh</in>
+            <in>FileSystem.hh</in>
+            <in>Function.hh</in>
+            <in>MemMap.cc</in>
+            <in>MemMap.hh</in>
+            <in>OS.cc</in>
+            <in>OS.hh</in>
+            <in>SignalHandler.cc</in>
+            <in>SignalHandler.hh</in>
+            <in>StdStream.cc</in>
+            <in>StdStream.hh</in>
+            <in>StringStream.cc</in>
+            <in>StringStream.hh</in>
+            <in>Types.hh</in>
+          </df>
+          <df name="xml">
+            <in>Error.hh</in>
+            <in>Node.cc</in>
+            <in>Node.hh</in>
+            <in>NodeSet.cc</in>
+            <in>NodeSet.hh</in>
+            <in>String.cc</in>
+            <in>String.hh</in>
+            <in>TreeBuilder.cc</in>
+            <in>TreeBuilder.hh</in>
+          </df>
+        </df>
+        <df name="test">
+          <df name="btest">
+            <in>JsonValTest.cc</in>
+            <in>UnitTest.cc</in>
+            <in>ValTest.cc</in>
+          </df>
+          <df name="data">
+            <df name="test_dir1">
+              <df name="folder1">
+              </df>
+            </df>
+          </df>
+          <df name="drive">
+            <in>EntryTest.cc</in>
+            <in>EntryTest.hh</in>
+            <in>ResourceTest.cc</in>
+            <in>ResourceTest.hh</in>
+            <in>ResourceTreeTest.cc</in>
+            <in>ResourceTreeTest.hh</in>
+            <in>StateTest.cc</in>
+            <in>StateTest.hh</in>
+          </df>
+          <df name="http">
+            <in>MockAgent.cc</in>
+            <in>MockAgent.hh</in>
+          </df>
+          <df name="util">
+            <in>ConfigTest.cc</in>
+            <in>ConfigTest.hh</in>
+            <in>DateTimeTest.cc</in>
+            <in>DateTimeTest.hh</in>
+            <in>FunctionTest.cc</in>
+            <in>FunctionTest.hh</in>
+            <in>SignalHandlerTest.cc</in>
+            <in>SignalHandlerTest.hh</in>
+          </df>
+          <df name="xml">
+            <in>NodeTest.cc</in>
+            <in>NodeTest.hh</in>
+          </df>
+          <in>Assert.hh</in>
+          <in>UnitTest.cc</in>
+        </df>
+      </df>
+      <df name="package">
+        <df name="fedora16">
+        </df>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>/home/ms/NetBeansProjects/grive/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>true</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

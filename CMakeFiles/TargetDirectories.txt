@@ -1,0 +1,4 @@
+/home/ms/NetBeansProjects/grive/bgrive/CMakeFiles/bgrive_executable.dir
+/home/ms/NetBeansProjects/grive/libgrive/CMakeFiles/btest.dir
+/home/ms/NetBeansProjects/grive/libgrive/CMakeFiles/grive.dir
+/home/ms/NetBeansProjects/grive/grive/CMakeFiles/grive_executable.dir

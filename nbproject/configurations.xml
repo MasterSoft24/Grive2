@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="/home/ms/NetBeansProjects/grive" name="0">
+      <df name="bgrive">
+        <df name="src">
+          <in>DriveModel.cc</in>
+          <in>MainWnd.cc</in>
+          <in>main.cc</in>
+          <in>moc_MainWnd.cxx</in>
+        </df>
+      </df>
+      <df name="grive">
+        <df name="src">
+          <in>main.cc</in>
+        </df>
+      </df>
+      <df name="libgrive">
+        <df name="src">
+          <df name="drive">
+            <in>CommonUri.cc</in>
+            <in>Drive.cc</in>
+            <in>Entry.cc</in>
+            <in>Feed.cc</in>
+            <in>Resource.cc</in>
+            <in>ResourceTree.cc</in>
+            <in>State.cc</in>
+          </df>
+          <df name="drive2">
+            <in>Drive.cc</in>
+            <in>Feed.cc</in>
+            <in>Resource.cc</in>
+          </df>
+          <df name="http">
+            <in>CurlAgent.cc</in>
+            <in>Download.cc</in>
+            <in>Header.cc</in>
+            <in>ResponseLog.cc</in>
+            <in>StringResponse.cc</in>
+            <in>XmlResponse.cc</in>
+          </df>
+          <df name="json">
+            <in>JsonParser.cc</in>
+            <in>JsonWriter.cc</in>
+            <in>Val.cc</in>
+            <in>ValBuilder.cc</in>
+            <in>ValResponse.cc</in>
+          </df>
+          <df name="protocol">
+            <in>AuthAgent.cc</in>
+            <in>Json.cc</in>
+            <in>JsonResponse.cc</in>
+            <in>OAuth2.cc</in>
+          </df>
+          <df name="util">
+            <df name="log">
+              <in>CommonLog.cc</in>
+              <in>CompositeLog.cc</in>
+              <in>DefaultLog.cc</in>
+              <in>Log.cc</in>
+            </df>
+            <in>Config.cc</in>
+            <in>Crypt.cc</in>
+            <in>DateTime.cc</in>
+            <in>Exception.cc</in>
+            <in>File.cc</in>
+            <in>MemMap.cc</in>
+            <in>OS.cc</in>
+            <in>SignalHandler.cc</in>
+            <in>StdStream.cc</in>
+            <in>StringStream.cc</in>
+          </df>
+          <df name="xml">
+            <in>Node.cc</in>
+            <in>NodeSet.cc</in>
+            <in>String.cc</in>
+            <in>TreeBuilder.cc</in>
+          </df>
+        </df>
+        <df name="test">
+          <df name="btest">
+            <in>JsonValTest.cc</in>
+            <in>UnitTest.cc</in>
+            <in>ValTest.cc</in>
+          </df>
+        </df>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Важные файлы"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>/home/ms/NetBeansProjects/grive/CMakeLists.txt</itemPath>
+      <itemPath>/home/ms/NetBeansProjects/grive/Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>/home/ms/NetBeansProjects/grive</Elem>
+  </sourceRootList>
+  <projectmakefile>/home/ms/NetBeansProjects/grive/Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>false</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>/home/ms/NetBeansProjects/grive</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <ccTool>
+            <preprocessorList>
+              <Elem>VERSION=\"0.3.0-pre\"</Elem>
+              <Elem>_FILE_OFFSET_BITS=64</Elem>
+            </preprocessorList>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="/home/ms/NetBeansProjects/grive/bgrive/src/DriveModel.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/bgrive/src/MainWnd.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/bgrive/src/main.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/grive/src/main.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/CommonUri.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Drive.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Entry.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Feed.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Resource.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/ResourceTree.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/State.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Drive.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Feed.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Resource.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/CurlAgent.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/Download.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/Header.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/ResponseLog.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/StringResponse.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/XmlResponse.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/JsonParser.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/JsonWriter.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/Val.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/ValBuilder.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/ValResponse.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/AuthAgent.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/Json.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/JsonResponse.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/OAuth2.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Config.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Crypt.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/DateTime.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Exception.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/File.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/MemMap.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/OS.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/SignalHandler.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/StdStream.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/StringStream.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/CommonLog.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/CompositeLog.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/DefaultLog.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/Log.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/Node.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/NodeSet.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/String.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/TreeBuilder.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/JsonValTest.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/UnitTest.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/ValTest.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="bgrive/src/moc_MainWnd.cxx" ex="false" tool="1" flavor2="4">
+      </item>
+      <folder path="0/bgrive">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>/usr/include/qt4/QtGui</pElem>
+            <pElem>/usr/include/qt4/QtCore</pElem>
+            <pElem>libgrive/src</pElem>
+            <pElem>bgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>QT_CORE_LIB</Elem>
+            <Elem>QT_GUI_LIB</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/grive">
+        <ccTool>
+          <incDir>
+            <pElem>libgrive/src</pElem>
+            <pElem>grive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>VERSION="0.3.0-pre"</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive">
+        <ccTool>
+          <incDir>
+            <pElem>libgrive/src</pElem>
+            <pElem>libgrive/test</pElem>
+            <pElem>libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
+            <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/test">
+        <ccTool>
+          <preprocessorList>
+            <Elem>BOOST_TEST_DYN_LINK</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+    </conf>
+  </confs>
+</configurationDescriptor>
