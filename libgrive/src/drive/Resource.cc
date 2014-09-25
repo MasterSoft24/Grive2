@@ -447,7 +447,7 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
 void Resource::SyncSelf( http::Agent* http, const Json& options )
 {
 	assert( !IsRoot() || m_state == sync ) ;	// root is always sync
-	//assert( IsRoot() || http == 0 || fs::is_directory( m_parent->Path() ) ) ;
+	assert( IsRoot() || http == 0 || fs::is_directory( m_parent->Path() ) ) ;
 	assert( IsRoot() || m_parent->m_state != remote_deleted ) ;
 	assert( IsRoot() || m_parent->m_state != local_deleted ) ;
 

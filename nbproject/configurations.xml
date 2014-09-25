@@ -105,8 +105,11 @@
           <buildCommandWorkingDir>/home/ms/NetBeansProjects/grive</buildCommandWorkingDir>
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
-          <executablePath>/home/ms/NetBeansProjects/grive/grive/grive</executablePath>
+          <executablePath></executablePath>
           <ccTool>
+            <incDir>
+              <pElem>libgrive/src</pElem>
+            </incDir>
             <preprocessorList>
               <Elem>VERSION="0.3.0-pre"</Elem>
               <Elem>_FILE_OFFSET_BITS=64</Elem>
@@ -123,6 +126,13 @@
             ex="false"
             tool="1"
             flavor2="4">
+        <ccTool>
+          <preprocessorList>
+            <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
+            <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
+            <Elem>VERSION=\"0.3.0-pre\"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Drive.cc"
             ex="false"
@@ -133,11 +143,25 @@
             ex="false"
             tool="1"
             flavor2="4">
+        <ccTool>
+          <preprocessorList>
+            <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
+            <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
+            <Elem>VERSION=\"0.3.0-pre\"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Feed.cc"
             ex="false"
             tool="1"
             flavor2="4">
+        <ccTool>
+          <preprocessorList>
+            <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
+            <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
+            <Elem>VERSION=\"0.3.0-pre\"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Resource.cc"
             ex="false"
@@ -352,7 +376,6 @@
       <folder path="0/grive">
         <ccTool>
           <incDir>
-            <pElem>libgrive/src</pElem>
             <pElem>grive</pElem>
           </incDir>
         </ccTool>
@@ -360,10 +383,18 @@
       <folder path="0/libgrive">
         <ccTool>
           <incDir>
-            <pElem>libgrive/src</pElem>
             <pElem>libgrive/test</pElem>
             <pElem>libgrive</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
+            <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
+            <Elem>VERSION=\"0.3.0-pre\"</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/drive">
+        <ccTool>
           <preprocessorList>
             <Elem>SRC_DIR="/home/ms/NetBeansProjects/grive/libgrive/src"</Elem>
             <Elem>TEST_DATA="/home/ms/NetBeansProjects/grive/libgrive/test/data/"</Elem>

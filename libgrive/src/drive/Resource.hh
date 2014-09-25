@@ -119,9 +119,7 @@ private :
 		
 		
 		/// invalid value
-		unknown,
-                
-                my
+		unknown
 	} ;
 
 	friend std::ostream& operator<<( std::ostream& os, State s ) ;
