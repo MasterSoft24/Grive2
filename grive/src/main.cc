@@ -173,10 +173,10 @@ int Main( int argc, char **argv )
 	InitGCrypt() ;
 	
 	// construct the program options
-	po::options_description desc( "Grive options" );
+	po::options_description desc( "Grive2 options" );
 	desc.add_options()
 		( "help,h",		"Produce help message" )
-		( "version,v",	"Display Grive version" )
+		( "version,v",	"Display Grive2 version" )
 		( "auth,a",		"Request authorization token" )
 		( "path,p",		po::value<std::string>(), "Path to sync")
 		( "verbose,V",	"Verbose mode. Enable more messages than normal.")
@@ -204,7 +204,7 @@ int Main( int argc, char **argv )
 	else if ( vm.count( "version" ) )
 	{
 		std::cout
-			<< "grive version " << VERSION << ' ' << __DATE__ << ' ' << __TIME__ << std::endl ;
+			<< "Grive2 version " << VERSION << ' ' << __DATE__ << ' ' << __TIME__ << std::endl ;
 		return 0 ;
 	}
 
