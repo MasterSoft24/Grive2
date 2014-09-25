@@ -20,6 +20,8 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+#include "util/Config.hh"
+
 #include "Resource.hh"
 #include "CommonUri.hh"
 #include "Entry.hh"
@@ -49,6 +51,9 @@
 #include <iostream>
 
 #include <fnmatch.h>
+
+std::vector<std::string> exclude_file;
+std::string path_to_sync_dir;
 
 namespace gr { namespace v1 {
 
@@ -370,6 +375,8 @@ Resource* Resource::FindChild( const std::string& name )
 }
 
 
+
+// ABSOLETE CODE NEED REMOVE
 std::string ptrn="./11/copy-fs";// exclude from sync
 
 bool PartialMatchTest(std::string pattern,std::string path){
@@ -407,7 +414,16 @@ bool PartialMatchTest(std::string pattern,std::string path){
     return false;
 }
 
-//=======================================
+//=====END OF ABSOLETE CODE NEED REMOVE ==================================
+
+
+bool replace(std::string& str, const std::string& from, const std::string& to) {
+    size_t start_pos = str.find(from);
+    if(start_pos == std::string::npos)
+        return false;
+    str.replace(start_pos, from.length(), to);
+    return true;
+}
 
 // try to change the state to "sync"
 void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options )
@@ -425,10 +441,17 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
             fp=current->Name()+"/"+fp;
         }
         
+        replace(fp,path_to_sync_dir,".");
+        
         if(fp!="."){
-            int res=fnmatch(ptrn.c_str(),fp.c_str(),FNM_FILE_NAME|FNM_NOESCAPE|FNM_LEADING_DIR|FNM_PERIOD);
-            if( (res)!=FNM_NOMATCH ){
-                return;
+            
+            for(std::vector<std::string>::iterator i=exclude_file.begin();i!=exclude_file.end();i++){
+                
+                int res=fnmatch((*i).c_str(),fp.c_str(),FNM_FILE_NAME|FNM_NOESCAPE|FNM_LEADING_DIR|FNM_PERIOD);
+                
+                if( (res)!=FNM_NOMATCH ){
+                    return;
+                }
             }
             
         }

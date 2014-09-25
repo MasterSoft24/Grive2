@@ -63,6 +63,7 @@ libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o: libgrive/src/http/StringR
 libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o: libgrive/src/http/XmlResponse.hh
 libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o: libgrive/src/protocol/Json.hh
 libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o: libgrive/src/util/CArray.hh
+libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o: libgrive/src/util/Config.hh
 libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o: libgrive/src/util/Crypt.hh
 libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o: libgrive/src/util/DataStream.hh
 libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o: libgrive/src/util/DateTime.hh

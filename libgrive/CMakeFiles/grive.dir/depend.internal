@@ -64,6 +64,7 @@ libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o
  libgrive/src/http/XmlResponse.hh
  libgrive/src/protocol/Json.hh
  libgrive/src/util/CArray.hh
+ libgrive/src/util/Config.hh
  libgrive/src/util/Crypt.hh
  libgrive/src/util/DataStream.hh
  libgrive/src/util/DateTime.hh

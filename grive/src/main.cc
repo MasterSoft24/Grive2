@@ -36,6 +36,7 @@
 #include "util/log/CompositeLog.hh"
 #include "util/log/DefaultLog.hh"
 
+
 // boost header
 #include <boost/exception/all.hpp>
 #include <boost/program_options.hpp>
@@ -53,6 +54,9 @@
 
 const std::string client_id		= "502802353894-fjbma0deq577lug7hrui8ma3ogv03se2.apps.googleusercontent.com" ;
 const std::string client_secret	= "HMQXlR2HDhrw58KR5lDQYKea" ;
+
+extern std::vector<std::string> exclude_file;
+extern std::string path_to_sync_dir;
 
 using namespace gr ;
 using namespace gr::v1 ;
@@ -213,6 +217,10 @@ int Main( int argc, char **argv )
 	
 	Config config(vm) ;
 	
+
+        
+          
+        
 	Log( "config file name %1%", config.Filename(), log::verbose );
 
 	if ( vm.count( "auth" ) )
@@ -266,13 +274,56 @@ int Main( int argc, char **argv )
             std::vector<std::string> out=    GetDriveFilenames(&agent);
             
             for(std::vector<std::string>::iterator i=out.begin();i!=out.end();i++){
-                Log("%1%",*i);
+                //Log("%1%",*i);
+                std::cout << (*i).c_str();
+                std::cout << "\n";
             }
             
             return 0;
         }
         
+        // read exclude config file
         
+            std::string w_path;
+            if(vm.count("path")==0){
+                w_path=".";
+            }
+            else{
+                w_path=	vm["path"].as<std::string>();
+                path_to_sync_dir=w_path;
+            }
+//            std::string w_path=	vm["path"].as<std::string>();//!="" ? vm["path"].as<std::string>() : "." )  ;
+            
+            w_path+="/.exclude";
+        
+//            std::ifstream is(w_path.c_str());
+//            std::istream_iterator<std::string> start(is), end;
+//            exclude_file=std::vector<std::string>(start, end);//std::vector<std::string> 
+//  
+//            std::copy(exclude_file.begin(), exclude_file.end(), std::ostream_iterator<std::string>(std::cout, "\n"));
+  
+            std::ifstream is (w_path.c_str(), std::ios_base::in);
+            std::string line;
+                while (getline(is, line, '\n'))
+                {
+                    int ssp=line.find("/",1);
+                    std::string rt=line.substr(0,ssp);
+                    line=line.replace(0,ssp,".");
+                  exclude_file.push_back (line);
+                }
+            
+            config.m_exclude=exclude_file;
+                    
+            
+//            for(std::vector<std::string>::iterator i=exclude_file.begin();i!=exclude_file.end();i++){
+//                //Log("%1%",*i);
+//                std::cout << (*i).c_str();
+//                std::cout << "\n";
+//            }
+                    
+            
+            
+       //     return 0;
         
 	Drive drive( &agent, config.GetAll() ) ;
 	drive.DetectChanges() ;
