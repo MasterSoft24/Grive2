@@ -1,7 +1,7 @@
 Grive2 0.1
 25 September 2014
 
-http://www.lbreda.com/grive/
+ http://mastersoft24.github.io/Grive2
 
 Grive2 can be considered still beta quality. It simply downloads selected files in your
 Google Drive into the current directory. After you make some changes to the local files, run
@@ -32,7 +32,7 @@ There are also some optional dependencies:
 
 Grive2 uses cmake to build, see the instructions in:
 
-http://www.lbreda.com/grive/installation
+ http://mastersoft24.github.io/Grive2/installation
 
 ...for detailed procedures to compile Grive2.
 
