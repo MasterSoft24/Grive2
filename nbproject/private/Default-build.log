@@ -1,65 +1,53 @@
-Scanning dependencies of target grive
-[  1%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o
-[  3%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/Entry.cc.o
-[  5%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/CommonUri.cc.o
-[  7%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/Feed.cc.o
-[  9%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/Drive.cc.o
-[ 11%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/State.cc.o
-[ 13%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/ResourceTree.cc.o
-[ 15%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive2/Resource.cc.o
-[ 16%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive2/Feed.cc.o
-[ 18%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive2/Drive.cc.o
-[ 20%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/StringResponse.cc.o
-[ 22%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/Header.cc.o
-[ 24%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/XmlResponse.cc.o
-[ 26%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/CurlAgent.cc.o
-[ 28%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/ResponseLog.cc.o
-[ 30%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/Download.cc.o
-[ 32%] Building CXX object libgrive/CMakeFiles/grive.dir/src/protocol/JsonResponse.cc.o
-[ 33%] Building CXX object libgrive/CMakeFiles/grive.dir/src/protocol/Json.cc.o
-[ 35%] Building CXX object libgrive/CMakeFiles/grive.dir/src/protocol/AuthAgent.cc.o
-[ 37%] Building CXX object libgrive/CMakeFiles/grive.dir/src/protocol/OAuth2.cc.o
-[ 39%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/Val.cc.o
-[ 41%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/JsonParser.cc.o
-[ 43%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/JsonWriter.cc.o
-[ 45%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/ValBuilder.cc.o
-[ 47%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/ValResponse.cc.o
-[ 49%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/OS.cc.o
-[ 50%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/MemMap.cc.o
-[ 52%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/Config.cc.o
-[ 54%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/DateTime.cc.o
-[ 56%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/File.cc.o
-[ 58%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/SignalHandler.cc.o
-[ 60%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/Exception.cc.o
-[ 62%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/StringStream.cc.o
-[ 64%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/StdStream.cc.o
-[ 66%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/Crypt.cc.o
-[ 67%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/log/CommonLog.cc.o
-[ 69%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/log/Log.cc.o
-[ 71%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/log/CompositeLog.cc.o
-[ 73%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/log/DefaultLog.cc.o
-[ 75%] Building CXX object libgrive/CMakeFiles/grive.dir/src/xml/NodeSet.cc.o
-[ 77%] Building CXX object libgrive/CMakeFiles/grive.dir/src/xml/TreeBuilder.cc.o
-[ 79%] Building CXX object libgrive/CMakeFiles/grive.dir/src/xml/Node.cc.o
-[ 81%] Building CXX object libgrive/CMakeFiles/grive.dir/src/xml/String.cc.o
+[  2%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/Resource.cc.o
+[  4%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/Entry.cc.o
+[  6%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/CommonUri.cc.o
+[  8%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/Feed.cc.o
+[ 10%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/Drive.cc.o
+[ 12%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/State.cc.o
+[ 14%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive/ResourceTree.cc.o
+[ 17%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive2/Resource.cc.o
+[ 19%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive2/Feed.cc.o
+[ 21%] Building CXX object libgrive/CMakeFiles/grive.dir/src/drive2/Drive.cc.o
+[ 23%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/StringResponse.cc.o
+[ 25%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/Header.cc.o
+[ 27%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/XmlResponse.cc.o
+[ 29%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/CurlAgent.cc.o
+[ 31%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/ResponseLog.cc.o
+[ 34%] Building CXX object libgrive/CMakeFiles/grive.dir/src/http/Download.cc.o
+[ 36%] Building CXX object libgrive/CMakeFiles/grive.dir/src/protocol/JsonResponse.cc.o
+[ 38%] Building CXX object libgrive/CMakeFiles/grive.dir/src/protocol/Json.cc.o
+[ 40%] Building CXX object libgrive/CMakeFiles/grive.dir/src/protocol/AuthAgent.cc.o
+[ 42%] Building CXX object libgrive/CMakeFiles/grive.dir/src/protocol/OAuth2.cc.o
+[ 44%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/Val.cc.o
+[ 46%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/JsonParser.cc.o
+[ 48%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/JsonWriter.cc.o
+[ 51%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/ValBuilder.cc.o
+[ 53%] Building CXX object libgrive/CMakeFiles/grive.dir/src/json/ValResponse.cc.o
+[ 55%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/OS.cc.o
+[ 57%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/MemMap.cc.o
+[ 59%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/Config.cc.o
+[ 61%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/DateTime.cc.o
+[ 63%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/File.cc.o
+[ 65%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/SignalHandler.cc.o
+[ 68%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/Exception.cc.o
+[ 70%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/StringStream.cc.o
+[ 72%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/StdStream.cc.o
+[ 74%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/Crypt.cc.o
+[ 76%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/log/CommonLog.cc.o
+[ 78%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/log/Log.cc.o
+[ 80%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/log/CompositeLog.cc.o
+[ 82%] Building CXX object libgrive/CMakeFiles/grive.dir/src/util/log/DefaultLog.cc.o
+[ 85%] Building CXX object libgrive/CMakeFiles/grive.dir/src/xml/NodeSet.cc.o
+[ 87%] Building CXX object libgrive/CMakeFiles/grive.dir/src/xml/TreeBuilder.cc.o
+[ 89%] Building CXX object libgrive/CMakeFiles/grive.dir/src/xml/Node.cc.o
+[ 91%] Building CXX object libgrive/CMakeFiles/grive.dir/src/xml/String.cc.o
 Linking CXX static library libgrive.a
-[ 81%] Built target grive
-Scanning dependencies of target btest
-[ 83%] Building CXX object libgrive/CMakeFiles/btest.dir/test/btest/UnitTest.cc.o
-[ 84%] Building CXX object libgrive/CMakeFiles/btest.dir/test/btest/JsonValTest.cc.o
-[ 86%] Building CXX object libgrive/CMakeFiles/btest.dir/test/btest/ValTest.cc.o
+[ 91%] Built target grive
+[ 93%] Building CXX object libgrive/CMakeFiles/btest.dir/test/btest/UnitTest.cc.o
+[ 95%] Building CXX object libgrive/CMakeFiles/btest.dir/test/btest/JsonValTest.cc.o
+[ 97%] Building CXX object libgrive/CMakeFiles/btest.dir/test/btest/ValTest.cc.o
 Linking CXX executable btest
-[ 86%] Built target btest
-Scanning dependencies of target grive_executable
-[ 88%] Building CXX object grive/CMakeFiles/grive_executable.dir/src/main.cc.o
-Linking CXX executable grive
-[ 88%] Built target grive_executable
-[ 90%] Generating src/moc_MainWnd.cxx
-[ 92%] Generating ui_MainWindow.h
-Scanning dependencies of target bgrive_executable
-[ 94%] Building CXX object bgrive/CMakeFiles/bgrive_executable.dir/src/main.cc.o
-[ 96%] Building CXX object bgrive/CMakeFiles/bgrive_executable.dir/src/MainWnd.cc.o
-[ 98%] Building CXX object bgrive/CMakeFiles/bgrive_executable.dir/src/DriveModel.cc.o
-[100%] Building CXX object bgrive/CMakeFiles/bgrive_executable.dir/src/moc_MainWnd.cxx.o
-Linking CXX executable bgrive
-[100%] Built target bgrive_executable
+[ 97%] Built target btest
+[100%] Building CXX object grive/CMakeFiles/grive_executable.dir/src/main.cc.o
+Linking CXX executable grive2
+[100%] Built target grive_executable

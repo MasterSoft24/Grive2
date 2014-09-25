@@ -4,5 +4,5 @@
 # compile CXX with /usr/bin/g++
 CXX_FLAGS = -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/grive/../libgrive/src   
 
-CXX_DEFINES = -DVERSION=\"0.3.0-pre\" -D_FILE_OFFSET_BITS=64
+CXX_DEFINES = -DVERSION=\"0.1\" -D_FILE_OFFSET_BITS=64
 

@@ -1,6 +1,9 @@
 /*
-	grive: an GPL program to sync a local directory with Google Drive
-	Copyright (C) 2013 Wan Wai Ho
+	grive2: an GPL program to sync a local directory with Google Drive
+	Forked from grive project
+	
+	Copyright (C) 2012  Wan Wai Ho
+	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -14,8 +17,7 @@
 
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-	MA  02110-1301, USA.
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 #include "Resource.hh"

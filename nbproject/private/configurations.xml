@@ -9,66 +9,6 @@
         </df>
       </df>
       <df name="build">
-        <df name="bgrive">
-          <df name="CMakeFiles">
-            <df name="bgrive_executable.dir">
-              <df name="src">
-              </df>
-            </df>
-          </df>
-          <df name="src">
-          </df>
-        </df>
-        <df name="CMakeFiles">
-          <df name="3.0.2">
-            <df name="CompilerIdC">
-              <in>CMakeCCompilerId.c</in>
-            </df>
-            <df name="CompilerIdCXX">
-              <in>CMakeCXXCompilerId.cpp</in>
-            </df>
-          </df>
-          <df name="CMakeTmp">
-          </df>
-        </df>
-        <df name="grive">
-          <df name="CMakeFiles">
-            <df name="grive_executable.dir">
-              <df name="src">
-              </df>
-            </df>
-          </df>
-        </df>
-        <df name="libgrive">
-          <df name="CMakeFiles">
-            <df name="btest.dir">
-              <df name="test">
-                <df name="btest">
-                </df>
-              </df>
-            </df>
-            <df name="grive.dir">
-              <df name="src">
-                <df name="drive">
-                </df>
-                <df name="drive2">
-                </df>
-                <df name="http">
-                </df>
-                <df name="json">
-                </df>
-                <df name="protocol">
-                </df>
-                <df name="util">
-                  <df name="log">
-                  </df>
-                </df>
-                <df name="xml">
-                </df>
-              </df>
-            </df>
-          </df>
-        </df>
       </df>
       <df name="cmake">
         <df name="Modules">
@@ -84,6 +24,8 @@
           </df>
         </df>
         <df name="CMakeTmp">
+        </df>
+        <df name="Progress">
         </df>
       </df>
       <df name="grive">
@@ -354,13 +296,11 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" --dry-run</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" --list</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" --list</runcommand>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
         <rundir>.</rundir>
-        <buildfirst>true</buildfirst>
+        <buildfirst>false</buildfirst>
         <terminal-type>0</terminal-type>
         <remove-instrumentation>0</remove-instrumentation>
         <environment>

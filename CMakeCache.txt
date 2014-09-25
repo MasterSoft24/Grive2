@@ -96,7 +96,7 @@ CMAKE_C_FLAGS_RELEASE:STRING=-O3 -DNDEBUG
 CMAKE_C_FLAGS_RELWITHDEBINFO:STRING=-O2 -g -DNDEBUG
 
 //Flags used by the linker.
-CMAKE_EXE_LINKER_FLAGS:STRING=' '
+CMAKE_EXE_LINKER_FLAGS:STRING=-ljson-c
 
 //Flags used by the linker during debug builds.
 CMAKE_EXE_LINKER_FLAGS_DEBUG:STRING=
@@ -114,7 +114,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=/usr/local
+CMAKE_INSTALL_PREFIX:PATH=/usr
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
@@ -860,6 +860,12 @@ bgrive_BINARY_DIR:STATIC=/home/ms/NetBeansProjects/grive/bgrive
 
 //Value Computed by CMake
 bgrive_SOURCE_DIR:STATIC=/home/ms/NetBeansProjects/grive/bgrive
+
+//Value Computed by CMake
+grive2_BINARY_DIR:STATIC=/home/ms/NetBeansProjects/grive/grive
+
+//Value Computed by CMake
+grive2_SOURCE_DIR:STATIC=/home/ms/NetBeansProjects/grive/grive
 
 //Value Computed by CMake
 grive_BINARY_DIR:STATIC=/home/ms/NetBeansProjects/grive/grive

@@ -14,7 +14,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_TARGET_DEFINITIONS
   "SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\""
   "TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\""
-  "VERSION=\"0.3.0-pre\""
+  "VERSION=\"0.1\""
   "_FILE_OFFSET_BITS=64"
   )
 

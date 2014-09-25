@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/grive_executable.dir/src/main.cc.o"
-  "grive.pdb"
-  "grive"
+  "grive2.pdb"
+  "grive2"
 )
 
 # Per-language clean rules from dependency scanning.

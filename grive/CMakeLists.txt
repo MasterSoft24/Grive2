@@ -1,4 +1,4 @@
-project( grive )
+project( grive2 )
 
 find_package(Boost COMPONENTS program_options REQUIRED)
 
@@ -21,7 +21,7 @@ target_link_libraries( grive_executable
 )
 
 set_target_properties( grive_executable
-    PROPERTIES OUTPUT_NAME grive
+    PROPERTIES OUTPUT_NAME grive2
 )
 
 install(TARGETS grive_executable RUNTIME DESTINATION bin)

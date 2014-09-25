@@ -111,7 +111,7 @@
               <pElem>libgrive/src</pElem>
             </incDir>
             <preprocessorList>
-              <Elem>VERSION="0.3.0-pre"</Elem>
+              <Elem>VERSION=\"0.1\"</Elem>
               <Elem>_FILE_OFFSET_BITS=64</Elem>
             </preprocessorList>
           </ccTool>
@@ -120,258 +120,237 @@
       <item path="/home/ms/NetBeansProjects/grive/grive/src/main.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/CommonUri.cc"
             ex="false"
             tool="1"
-            flavor2="4">
-        <ccTool>
-          <preprocessorList>
-            <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
-            <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
-            <Elem>VERSION=\"0.3.0-pre\"</Elem>
-          </preprocessorList>
-        </ccTool>
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Drive.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Entry.cc"
             ex="false"
             tool="1"
-            flavor2="4">
-        <ccTool>
-          <preprocessorList>
-            <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
-            <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
-            <Elem>VERSION=\"0.3.0-pre\"</Elem>
-          </preprocessorList>
-        </ccTool>
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Feed.cc"
             ex="false"
             tool="1"
-            flavor2="4">
-        <ccTool>
-          <preprocessorList>
-            <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
-            <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
-            <Elem>VERSION=\"0.3.0-pre\"</Elem>
-          </preprocessorList>
-        </ccTool>
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Resource.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/ResourceTree.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/State.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Drive.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Feed.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Resource.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/CurlAgent.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/Download.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/Header.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/ResponseLog.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/StringResponse.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/XmlResponse.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/JsonParser.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/JsonWriter.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/Val.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/ValBuilder.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/ValResponse.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/AuthAgent.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/Json.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/JsonResponse.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/OAuth2.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Config.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Crypt.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/DateTime.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Exception.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/File.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/MemMap.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/OS.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/SignalHandler.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/StdStream.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/StringStream.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/CommonLog.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/CompositeLog.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/DefaultLog.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/Log.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/Node.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/NodeSet.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/String.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/TreeBuilder.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/JsonValTest.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/UnitTest.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/ValTest.cc"
             ex="false"
             tool="1"
-            flavor2="4">
+            flavor2="0">
       </item>
       <folder path="0/grive">
         <ccTool>
@@ -389,15 +368,6 @@
           <preprocessorList>
             <Elem>SRC_DIR=\"/home/ms/NetBeansProjects/grive/libgrive/src\"</Elem>
             <Elem>TEST_DATA=\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\"</Elem>
-            <Elem>VERSION=\"0.3.0-pre\"</Elem>
-          </preprocessorList>
-        </ccTool>
-      </folder>
-      <folder path="0/libgrive/src/drive">
-        <ccTool>
-          <preprocessorList>
-            <Elem>SRC_DIR="/home/ms/NetBeansProjects/grive/libgrive/src"</Elem>
-            <Elem>TEST_DATA="/home/ms/NetBeansProjects/grive/libgrive/test/data/"</Elem>
           </preprocessorList>
         </ccTool>
       </folder>

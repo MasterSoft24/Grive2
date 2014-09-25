@@ -1,237 +1,237 @@
 [
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -DBOOST_TEST_DYN_LINK -o CMakeFiles/btest.dir/test/btest/UnitTest.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/test/btest/UnitTest.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -DBOOST_TEST_DYN_LINK -o CMakeFiles/btest.dir/test/btest/UnitTest.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/test/btest/UnitTest.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/test/btest/UnitTest.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -DBOOST_TEST_DYN_LINK -o CMakeFiles/btest.dir/test/btest/JsonValTest.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/test/btest/JsonValTest.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -DBOOST_TEST_DYN_LINK -o CMakeFiles/btest.dir/test/btest/JsonValTest.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/test/btest/JsonValTest.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/test/btest/JsonValTest.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -DBOOST_TEST_DYN_LINK -o CMakeFiles/btest.dir/test/btest/ValTest.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/test/btest/ValTest.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -DBOOST_TEST_DYN_LINK -o CMakeFiles/btest.dir/test/btest/ValTest.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/test/btest/ValTest.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/test/btest/ValTest.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/Resource.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/Resource.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/Resource.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/Resource.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive/Resource.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/Entry.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/Entry.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/Entry.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/Entry.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive/Entry.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/CommonUri.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/CommonUri.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/CommonUri.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/CommonUri.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive/CommonUri.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/Feed.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/Feed.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/Feed.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/Feed.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive/Feed.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/Drive.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/Drive.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/Drive.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/Drive.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive/Drive.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/State.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/State.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/State.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/State.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive/State.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/ResourceTree.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/ResourceTree.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive/ResourceTree.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive/ResourceTree.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive/ResourceTree.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive2/Resource.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive2/Resource.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive2/Resource.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive2/Resource.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Resource.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive2/Feed.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive2/Feed.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive2/Feed.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive2/Feed.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Feed.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive2/Drive.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive2/Drive.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/drive2/Drive.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/drive2/Drive.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Drive.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/StringResponse.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/StringResponse.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/StringResponse.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/StringResponse.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/http/StringResponse.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/Header.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/Header.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/Header.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/Header.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/http/Header.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/XmlResponse.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/XmlResponse.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/XmlResponse.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/XmlResponse.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/http/XmlResponse.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/CurlAgent.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/CurlAgent.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/CurlAgent.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/CurlAgent.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/http/CurlAgent.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/ResponseLog.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/ResponseLog.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/ResponseLog.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/ResponseLog.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/http/ResponseLog.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/Download.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/Download.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/http/Download.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/http/Download.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/http/Download.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/protocol/JsonResponse.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/protocol/JsonResponse.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/protocol/JsonResponse.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/protocol/JsonResponse.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/protocol/JsonResponse.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/protocol/Json.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/protocol/Json.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/protocol/Json.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/protocol/Json.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/protocol/Json.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/protocol/AuthAgent.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/protocol/AuthAgent.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/protocol/AuthAgent.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/protocol/AuthAgent.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/protocol/AuthAgent.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/protocol/OAuth2.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/protocol/OAuth2.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/protocol/OAuth2.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/protocol/OAuth2.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/protocol/OAuth2.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/Val.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/Val.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/Val.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/Val.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/json/Val.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/JsonParser.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/JsonParser.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/JsonParser.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/JsonParser.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/json/JsonParser.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/JsonWriter.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/JsonWriter.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/JsonWriter.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/JsonWriter.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/json/JsonWriter.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/ValBuilder.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/ValBuilder.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/ValBuilder.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/ValBuilder.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/json/ValBuilder.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/ValResponse.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/ValResponse.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/json/ValResponse.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/json/ValResponse.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/json/ValResponse.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/OS.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/OS.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/OS.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/OS.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/OS.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/MemMap.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/MemMap.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/MemMap.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/MemMap.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/MemMap.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/Config.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/Config.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/Config.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/Config.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/Config.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/DateTime.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/DateTime.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/DateTime.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/DateTime.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/DateTime.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/File.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/File.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/File.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/File.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/File.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/SignalHandler.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/SignalHandler.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/SignalHandler.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/SignalHandler.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/SignalHandler.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/Exception.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/Exception.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/Exception.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/Exception.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/Exception.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/StringStream.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/StringStream.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/StringStream.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/StringStream.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/StringStream.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/StdStream.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/StdStream.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/StdStream.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/StdStream.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/StdStream.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/Crypt.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/Crypt.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/Crypt.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/Crypt.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/Crypt.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/log/CommonLog.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/log/CommonLog.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/log/CommonLog.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/log/CommonLog.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/log/CommonLog.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/log/Log.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/log/Log.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/log/Log.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/log/Log.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/log/Log.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/log/CompositeLog.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/log/CompositeLog.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/log/CompositeLog.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/log/CompositeLog.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/log/CompositeLog.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/log/DefaultLog.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/log/DefaultLog.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/util/log/DefaultLog.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/util/log/DefaultLog.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/util/log/DefaultLog.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/xml/NodeSet.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/xml/NodeSet.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/xml/NodeSet.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/xml/NodeSet.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/xml/NodeSet.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/xml/TreeBuilder.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/xml/TreeBuilder.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/xml/TreeBuilder.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/xml/TreeBuilder.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/xml/TreeBuilder.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/xml/Node.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/xml/Node.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/xml/Node.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/xml/Node.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/xml/Node.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/libgrive",
-  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/xml/String.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/xml/String.cc",
+  "command": "/usr/bin/g++   -DSRC_DIR=\\\"/home/ms/NetBeansProjects/grive/libgrive/src\\\" -DTEST_DATA=\\\"/home/ms/NetBeansProjects/grive/libgrive/test/data/\\\" -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/libgrive/src -I/home/ms/NetBeansProjects/grive/libgrive/test    -o CMakeFiles/grive.dir/src/xml/String.cc.o -c /home/ms/NetBeansProjects/grive/libgrive/src/xml/String.cc",
   "file": "/home/ms/NetBeansProjects/grive/libgrive/src/xml/String.cc"
 },
 {
   "directory": "/home/ms/NetBeansProjects/grive/grive",
-  "command": "/usr/bin/g++   -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/grive/../libgrive/src    -o CMakeFiles/grive_executable.dir/src/main.cc.o -c /home/ms/NetBeansProjects/grive/grive/src/main.cc",
+  "command": "/usr/bin/g++   -DVERSION=\\\"0.1\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/grive/../libgrive/src    -o CMakeFiles/grive_executable.dir/src/main.cc.o -c /home/ms/NetBeansProjects/grive/grive/src/main.cc",
   "file": "/home/ms/NetBeansProjects/grive/grive/src/main.cc"
 }
 ]
