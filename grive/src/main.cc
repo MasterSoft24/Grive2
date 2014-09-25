@@ -235,6 +235,10 @@ int Main( int argc, char **argv )
 		// save to config
 		config.Set( "refresh_token", Json( token.RefreshToken() ) ) ;
 		config.Save() ;
+                
+                std::cout << "\n\nToken was succesfully accepted and saved. To start working with the program run grive2 without any options for start full synchronize. \nFor file list setup which will be loaded, read readme.\n";
+                
+                return 0;
 	}
 	
 	std::string refresh_token ;
@@ -245,7 +249,7 @@ int Main( int argc, char **argv )
 	catch ( Exception& e )
 	{
 		Log(
-			"Please run grive with the \"-a\" option if this is the "
+			"Please run grive2 with the \"-a\" option if this is the "
 			"first time you're accessing your Google Drive!",
 			log::critical ) ;
 		
