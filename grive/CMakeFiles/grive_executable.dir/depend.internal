@@ -6,9 +6,10 @@ grive/CMakeFiles/grive_executable.dir/src/main.cc.o
  grive/../libgrive/src/bfd/Addr.hh
  grive/../libgrive/src/bfd/Backtrace.hh
  grive/../libgrive/src/drive/Drive.hh
- grive/../libgrive/src/drive/Resource.hh
  grive/../libgrive/src/drive/ResourceTree.hh
  grive/../libgrive/src/drive/State.hh
+ grive/../libgrive/src/drive2/Drive.hh
+ grive/../libgrive/src/drive2/Resource.hh
  grive/../libgrive/src/http/Agent.hh
  grive/../libgrive/src/http/CurlAgent.hh
  grive/../libgrive/src/http/Header.hh

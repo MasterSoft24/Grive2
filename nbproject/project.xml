@@ -5,8 +5,8 @@
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>grive</name>
             <c-extensions>c</c-extensions>
-            <cpp-extensions>cc,cpp,cxx</cpp-extensions>
-            <header-extensions>h,hh</header-extensions>
+            <cpp-extensions>cc,cpp</cpp-extensions>
+            <header-extensions>hh</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>

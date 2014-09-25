@@ -20,6 +20,7 @@
 #include "util/Config.hh"
 
 #include "drive/Drive.hh"
+#include "drive2/Drive.hh"
 
 #include "http/CurlAgent.hh"
 #include "protocol/AuthAgent.hh"
@@ -43,6 +44,9 @@
 #include <cstdlib>
 #include <iostream>
 #include <unistd.h>
+
+
+
 
 const std::string client_id		= "22314510474.apps.googleusercontent.com" ;
 const std::string client_secret	= "bl4ufi89h-9MkFlypcI7R785" ;
@@ -99,6 +103,66 @@ void InitLog( const po::variables_map& vm )
 	LogBase::Inst( std::auto_ptr<LogBase>(comp_log.release()) ) ;
 }
 
+std::vector<std::string> file_ids;
+
+void CollectDriveFilesIDsList(gr::v2::Resource* res, gr::v2::Drive* drive_list){
+    
+            //gr::v2::Resource* res= drive_list->Root();
+           
+            for(int i=0;i<res->ChildCount();i++){
+                
+                gr::v2::Resource* rs=drive_list->Find(res->At(i));
+                
+                file_ids.push_back(res->At(i));
+                
+                if(rs->ChildCount()>0){
+                    
+                    CollectDriveFilesIDsList(rs,drive_list);
+                    
+                }
+                
+            }
+}
+
+
+std::vector<std::string> GetDriveFilenames( gr::AuthAgent* agent){
+            std::vector<std::string> out;
+            
+            gr::v2::Drive* drive_list=new gr::v2::Drive() ; 
+            drive_list->Refresh(agent);
+            
+            gr::v2::Resource* res= drive_list->Root();
+            
+            file_ids.clear();
+            CollectDriveFilesIDsList(res,drive_list);
+            
+            std::vector<std::string>::iterator it;
+            std::sort(file_ids.begin(), file_ids.end()); 
+            it = std::unique(file_ids.begin(), file_ids.end()); 
+            file_ids.resize(it - file_ids.begin());
+            
+            
+            for(std::vector<std::string>::iterator i=file_ids.begin();i!=file_ids.end();i++){
+                
+                gr::v2::Resource* rs=drive_list->Find(*i);
+                
+                std::string f=rs->Title();
+                while((rs=drive_list->Find(rs->Parent()))!=0){
+                    f=rs->Title()+"/"+f;
+                }
+                out.push_back("/"+f);
+               //Log("%1%",f);
+                
+            }
+            
+            // out result file list
+            
+            std::sort(out.begin(), out.end()); 
+            
+            return out;
+}
+
+
 int Main( int argc, char **argv )
 {
      chdir("/home/ms/GoogleDrive");
@@ -121,6 +185,7 @@ int Main( int argc, char **argv )
 						"instead of uploading it." )
 		( "dry-run",	"Only detect which files need to be uploaded/downloaded, "
 						"without actually performing them." )
+                ( "list,s",		"Produce Google drive remote file list" )
 	;
 	
 	po::variables_map vm;
@@ -187,6 +252,21 @@ int Main( int argc, char **argv )
 	OAuth2 token( refresh_token, client_id, client_secret ) ;
 	AuthAgent agent( token, std::auto_ptr<http::Agent>( new http::CurlAgent ) ) ;
 
+        
+        if ( vm.count( "list" ) != 0 ){// remote files list
+            
+        
+            std::vector<std::string> out=    GetDriveFilenames(&agent);
+            
+            for(std::vector<std::string>::iterator i=out.begin();i!=out.end();i++){
+                Log("%1%",*i);
+            }
+            
+            return 0;
+        }
+        
+        
+        
 	Drive drive( &agent, config.GetAll() ) ;
 	drive.DetectChanges() ;
 
@@ -197,6 +277,8 @@ int Main( int argc, char **argv )
 	}
 	else
 		drive.DryRun() ;
+        
+
 	
 	config.Save() ;
 	Log( "Finished!", log::info ) ;

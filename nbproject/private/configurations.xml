@@ -2,25 +2,6 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="/home/ms/NetBeansProjects/grive" name="0">
-      <df name="bgrive">
-        <df name="CMakeFiles">
-          <df name="bgrive_executable.dir">
-            <df name="src">
-            </df>
-          </df>
-        </df>
-        <df name="src">
-          <in>DriveModel.cc</in>
-          <in>DriveModel.hh</in>
-          <in>MainWnd.cc</in>
-          <in>MainWnd.hh</in>
-          <in>main.cc</in>
-          <in>moc_MainWnd.cxx</in>
-        </df>
-        <df name="ui">
-        </df>
-        <in>ui_MainWindow.h</in>
-      </df>
       <df name="build">
         <df name="bgrive">
           <df name="CMakeFiles">
@@ -369,10 +350,11 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" --dry-run</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" --list</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" --dry-run</runcommand>
+        <runcommand>"${OUTPUT_PATH}" --list</runcommand>
         <rundir>.</rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

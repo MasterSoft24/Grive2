@@ -5,9 +5,10 @@ grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/src/main.cc
 grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/bfd/Addr.hh
 grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/bfd/Backtrace.hh
 grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/drive/Drive.hh
-grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/drive/Resource.hh
 grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/drive/ResourceTree.hh
 grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/drive/State.hh
+grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/drive2/Drive.hh
+grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/drive2/Resource.hh
 grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/http/Agent.hh
 grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/http/CurlAgent.hh
 grive/CMakeFiles/grive_executable.dir/src/main.cc.o: grive/../libgrive/src/http/Header.hh

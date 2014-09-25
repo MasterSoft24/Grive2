@@ -182,19 +182,6 @@ grive_executable/fast:
 	$(MAKE) -f grive/CMakeFiles/grive_executable.dir/build.make grive/CMakeFiles/grive_executable.dir/build
 .PHONY : grive_executable/fast
 
-#=============================================================================
-# Target rules for targets named bgrive_executable
-
-# Build rule for target.
-bgrive_executable: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 bgrive_executable
-.PHONY : bgrive_executable
-
-# fast build rule for target.
-bgrive_executable/fast:
-	$(MAKE) -f bgrive/CMakeFiles/bgrive_executable.dir/build.make bgrive/CMakeFiles/bgrive_executable.dir/build
-.PHONY : bgrive_executable/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -210,7 +197,6 @@ help:
 	@echo "... btest"
 	@echo "... grive"
 	@echo "... grive_executable"
-	@echo "... bgrive_executable"
 .PHONY : help
 
 

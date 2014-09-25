@@ -413,7 +413,7 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
 	assert( !IsRoot() || m_state == sync ) ;	// root folder is already synced
 	
         
-// ==== EXCLUDING FROM SUNC =====    
+// ==== EXCLUDING FROM SYNC =====    
         
         // restore full canonical path
         std::string fp=this->Name();

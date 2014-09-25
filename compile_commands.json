@@ -233,25 +233,5 @@
   "directory": "/home/ms/NetBeansProjects/grive/grive",
   "command": "/usr/bin/g++   -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -I/home/ms/NetBeansProjects/grive/grive/../libgrive/src    -o CMakeFiles/grive_executable.dir/src/main.cc.o -c /home/ms/NetBeansProjects/grive/grive/src/main.cc",
   "file": "/home/ms/NetBeansProjects/grive/grive/src/main.cc"
-},
-{
-  "directory": "/home/ms/NetBeansProjects/grive/bgrive",
-  "command": "/usr/bin/g++   -DQT_CORE_LIB -DQT_GUI_LIB -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtCore -I/home/ms/NetBeansProjects/grive/bgrive/../libgrive/src -I/home/ms/NetBeansProjects/grive/bgrive    -o CMakeFiles/bgrive_executable.dir/src/main.cc.o -c /home/ms/NetBeansProjects/grive/bgrive/src/main.cc",
-  "file": "/home/ms/NetBeansProjects/grive/bgrive/src/main.cc"
-},
-{
-  "directory": "/home/ms/NetBeansProjects/grive/bgrive",
-  "command": "/usr/bin/g++   -DQT_CORE_LIB -DQT_GUI_LIB -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtCore -I/home/ms/NetBeansProjects/grive/bgrive/../libgrive/src -I/home/ms/NetBeansProjects/grive/bgrive    -o CMakeFiles/bgrive_executable.dir/src/MainWnd.cc.o -c /home/ms/NetBeansProjects/grive/bgrive/src/MainWnd.cc",
-  "file": "/home/ms/NetBeansProjects/grive/bgrive/src/MainWnd.cc"
-},
-{
-  "directory": "/home/ms/NetBeansProjects/grive/bgrive",
-  "command": "/usr/bin/g++   -DQT_CORE_LIB -DQT_GUI_LIB -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtCore -I/home/ms/NetBeansProjects/grive/bgrive/../libgrive/src -I/home/ms/NetBeansProjects/grive/bgrive    -o CMakeFiles/bgrive_executable.dir/src/DriveModel.cc.o -c /home/ms/NetBeansProjects/grive/bgrive/src/DriveModel.cc",
-  "file": "/home/ms/NetBeansProjects/grive/bgrive/src/DriveModel.cc"
-},
-{
-  "directory": "/home/ms/NetBeansProjects/grive/bgrive",
-  "command": "/usr/bin/g++   -DQT_CORE_LIB -DQT_GUI_LIB -DVERSION=\\\"0.3.0-pre\\\" -D_FILE_OFFSET_BITS=64 -g3 -gdwarf-2 -isystem /usr/include/qt4 -isystem /usr/include/qt4/QtGui -isystem /usr/include/qt4/QtCore -I/home/ms/NetBeansProjects/grive/bgrive/../libgrive/src -I/home/ms/NetBeansProjects/grive/bgrive    -o CMakeFiles/bgrive_executable.dir/src/moc_MainWnd.cxx.o -c /home/ms/NetBeansProjects/grive/bgrive/src/moc_MainWnd.cxx",
-  "file": "/home/ms/NetBeansProjects/grive/bgrive/src/moc_MainWnd.cxx"
 }
 ]

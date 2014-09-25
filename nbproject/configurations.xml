@@ -2,14 +2,6 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="/home/ms/NetBeansProjects/grive" name="0">
-      <df name="bgrive">
-        <df name="src">
-          <in>DriveModel.cc</in>
-          <in>MainWnd.cc</in>
-          <in>main.cc</in>
-          <in>moc_MainWnd.cxx</in>
-        </df>
-      </df>
       <df name="grive">
         <df name="src">
           <in>main.cc</in>
@@ -122,21 +114,6 @@
           </ccTool>
         </makeTool>
       </makefileType>
-      <item path="/home/ms/NetBeansProjects/grive/bgrive/src/DriveModel.cc"
-            ex="false"
-            tool="1"
-            flavor2="4">
-      </item>
-      <item path="/home/ms/NetBeansProjects/grive/bgrive/src/MainWnd.cc"
-            ex="false"
-            tool="1"
-            flavor2="4">
-      </item>
-      <item path="/home/ms/NetBeansProjects/grive/bgrive/src/main.cc"
-            ex="false"
-            tool="1"
-            flavor2="4">
-      </item>
       <item path="/home/ms/NetBeansProjects/grive/grive/src/main.cc"
             ex="false"
             tool="1"
@@ -372,23 +349,6 @@
             tool="1"
             flavor2="4">
       </item>
-      <item path="bgrive/src/moc_MainWnd.cxx" ex="false" tool="1" flavor2="4">
-      </item>
-      <folder path="0/bgrive">
-        <ccTool>
-          <incDir>
-            <pElem>/usr/include/qt4</pElem>
-            <pElem>/usr/include/qt4/QtGui</pElem>
-            <pElem>/usr/include/qt4/QtCore</pElem>
-            <pElem>libgrive/src</pElem>
-            <pElem>bgrive</pElem>
-          </incDir>
-          <preprocessorList>
-            <Elem>QT_CORE_LIB</Elem>
-            <Elem>QT_GUI_LIB</Elem>
-          </preprocessorList>
-        </ccTool>
-      </folder>
       <folder path="0/grive">
         <ccTool>
           <incDir>

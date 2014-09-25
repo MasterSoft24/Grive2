@@ -1,3 +1,0 @@
-# Hashes of file build rules.
-94e5e37ef5453d25689891933e5aa443 bgrive/src/moc_MainWnd.cxx
-10c79666280a52ad444520dc5c3b9c14 bgrive/ui_MainWindow.h

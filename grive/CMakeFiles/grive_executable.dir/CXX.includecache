@@ -11,6 +11,8 @@ util/Config.hh
 /home/ms/NetBeansProjects/grive/grive/src/util/Config.hh
 drive/Drive.hh
 /home/ms/NetBeansProjects/grive/grive/src/drive/Drive.hh
+drive2/Drive.hh
+/home/ms/NetBeansProjects/grive/grive/src/drive2/Drive.hh
 http/CurlAgent.hh
 /home/ms/NetBeansProjects/grive/grive/src/http/CurlAgent.hh
 protocol/AuthAgent.hh
@@ -68,20 +70,6 @@ string
 vector
 -
 
-grive/../libgrive/src/drive/Resource.hh
-util/DateTime.hh
-grive/../libgrive/src/drive/util/DateTime.hh
-util/Exception.hh
-grive/../libgrive/src/drive/util/Exception.hh
-util/FileSystem.hh
-grive/../libgrive/src/drive/util/FileSystem.hh
-string
--
-vector
--
-iosfwd
--
-
 grive/../libgrive/src/drive/ResourceTree.hh
 Resource.hh
 grive/../libgrive/src/drive/Resource.hh
@@ -104,6 +92,24 @@ grive/../libgrive/src/drive/util/DateTime.hh
 util/FileSystem.hh
 grive/../libgrive/src/drive/util/FileSystem.hh
 memory
+-
+
+grive/../libgrive/src/drive2/Drive.hh
+Resource.hh
+grive/../libgrive/src/drive2/Resource.hh
+boost/multi_index_container.hpp
+-
+boost/multi_index/hashed_index.hpp
+-
+boost/multi_index/identity.hpp
+-
+boost/multi_index/mem_fun.hpp
+-
+
+grive/../libgrive/src/drive2/Resource.hh
+string
+-
+vector
 -
 
 grive/../libgrive/src/http/Agent.hh

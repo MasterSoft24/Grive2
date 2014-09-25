@@ -36,7 +36,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/ms/NetBeansProjects/grive/libgrive/cmake_install.cmake")
   include("/home/ms/NetBeansProjects/grive/grive/cmake_install.cmake")
-  include("/home/ms/NetBeansProjects/grive/bgrive/cmake_install.cmake")
 
 endif()
 
