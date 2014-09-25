@@ -51,8 +51,8 @@
 
 
 
-const std::string client_id		= "22314510474.apps.googleusercontent.com" ;
-const std::string client_secret	= "bl4ufi89h-9MkFlypcI7R785" ;
+const std::string client_id		= "502802353894-fjbma0deq577lug7hrui8ma3ogv03se2.apps.googleusercontent.com" ;
+const std::string client_secret	= "HMQXlR2HDhrw58KR5lDQYKea" ;
 
 using namespace gr ;
 using namespace gr::v1 ;
@@ -168,7 +168,7 @@ std::vector<std::string> GetDriveFilenames( gr::AuthAgent* agent){
 
 int Main( int argc, char **argv )
 {
-     chdir("/home/ms/GoogleDrive");
+     
     
 	InitGCrypt() ;
 	

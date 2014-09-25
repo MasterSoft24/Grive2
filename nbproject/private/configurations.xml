@@ -294,10 +294,12 @@
       </nativedebugger>
       <runprofile version="9">
         <runcommandpicklist>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --version</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --list</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --a</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --version</runcommand>
+        <runcommand>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --a</runcommand>
         <rundir>.</rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
