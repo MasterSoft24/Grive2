@@ -20,9 +20,9 @@ depends=('json-c' 'curl' 'boost-libs' 'expat' 'libgcrypt' 'yajl')
 makedepends=('cmake' 'git' 'boost' 'yajl' 'json-c' )
 options=(!emptydirs)
 
-#source=("https://github.com/MasterSoft24/Grive2/archive/v$pkgver.tar.gz")
-source=Grive2-0.1.zip
-md5sums=('e853401ddd80f33c0e9412af5d8c4032')
+source=("https://github.com/MasterSoft24/Grive2/archive/$pkgver.tar.gz")
+
+md5sums=('35e4382631bbec16c40626e6ac3951f5')
 
 
 build() {
