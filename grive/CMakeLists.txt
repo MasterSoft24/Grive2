@@ -1,4 +1,4 @@
-project( grive2 )
+project( grive )
 
 find_package(Boost COMPONENTS program_options REQUIRED)
 
@@ -25,4 +25,4 @@ set_target_properties( grive_executable
 )
 
 install(TARGETS grive_executable RUNTIME DESTINATION bin)
-install(FILES doc/grive.1 DESTINATION share/man/man1 )
+install(FILES doc/grive2.1 DESTINATION share/man/man1 )

@@ -1,1 +1,0 @@
-/usr/bin/g++   -g3 -gdwarf-2  -ljson-c CMakeFiles/grive_executable.dir/src/main.cc.o  -o grive2 -rdynamic -lboost_program_options ../libgrive/libgrive.a -lyajl -lcurl -ljson-c -lgcrypt -lgpg-error -lboost_program_options -lboost_filesystem -lboost_unit_test_framework -lboost_system -Wl,-Bstatic -liberty -Wl,-Bdynamic -lexpat -Wl,-Bstatic -liberty -Wl,-Bdynamic -lexpat -lz 

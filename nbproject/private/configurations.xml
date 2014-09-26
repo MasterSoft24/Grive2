@@ -3,12 +3,56 @@
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="/home/ms/NetBeansProjects/grive" name="0">
       <df name="bgrive">
-        <df name="CMakeFiles">
-          <df name="bgrive_executable.dir">
-          </df>
-        </df>
       </df>
       <df name="build">
+        <df name="CMakeFiles">
+          <df name="3.0.2">
+            <df name="CompilerIdC">
+            </df>
+            <df name="CompilerIdCXX">
+            </df>
+          </df>
+          <df name="CMakeTmp">
+          </df>
+        </df>
+        <df name="grive">
+          <df name="CMakeFiles">
+            <df name="grive_executable.dir">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="libgrive">
+          <df name="CMakeFiles">
+            <df name="btest.dir">
+              <df name="test">
+                <df name="btest">
+                </df>
+              </df>
+            </df>
+            <df name="grive.dir">
+              <df name="src">
+                <df name="drive">
+                </df>
+                <df name="drive2">
+                </df>
+                <df name="http">
+                </df>
+                <df name="json">
+                </df>
+                <df name="protocol">
+                </df>
+                <df name="util">
+                  <df name="log">
+                  </df>
+                </df>
+                <df name="xml">
+                </df>
+              </df>
+            </df>
+          </df>
+        </df>
       </df>
       <df name="cmake">
         <df name="Modules">
@@ -27,12 +71,6 @@
         </df>
       </df>
       <df name="grive">
-        <df name="CMakeFiles">
-          <df name="grive_executable.dir">
-            <df name="src">
-            </df>
-          </df>
-        </df>
         <df name="doc">
         </df>
         <df name="src">
@@ -56,34 +94,6 @@
         </df>
       </df>
       <df name="libgrive">
-        <df name="CMakeFiles">
-          <df name="btest.dir">
-            <df name="test">
-              <df name="btest">
-              </df>
-            </df>
-          </df>
-          <df name="grive.dir">
-            <df name="src">
-              <df name="drive">
-              </df>
-              <df name="drive2">
-              </df>
-              <df name="http">
-              </df>
-              <df name="json">
-              </df>
-              <df name="protocol">
-              </df>
-              <df name="util">
-                <df name="log">
-                </df>
-              </df>
-              <df name="xml">
-              </df>
-            </df>
-          </df>
-        </df>
         <df name="src">
           <df name="bfd">
             <in>Addr.hh</in>
@@ -221,14 +231,6 @@
             </df>
           </df>
           <df name="drive">
-            <in>EntryTest.cc</in>
-            <in>EntryTest.hh</in>
-            <in>ResourceTest.cc</in>
-            <in>ResourceTest.hh</in>
-            <in>ResourceTreeTest.cc</in>
-            <in>ResourceTreeTest.hh</in>
-            <in>StateTest.cc</in>
-            <in>StateTest.hh</in>
           </df>
           <df name="http">
             <in>MockAgent.cc</in>
@@ -253,6 +255,8 @@
         </df>
       </df>
       <df name="package">
+        <df name="arch">
+        </df>
         <df name="fedora16">
         </df>
       </df>
@@ -299,11 +303,11 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --list</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --list >/home/ms/GoogleDrive/.exclude</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" --dry-run -p /home/ms/GoogleDrive</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <runcommand>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive</runcommand>
         <rundir>.</rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
