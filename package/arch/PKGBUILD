@@ -1,6 +1,5 @@
-# Maintainer: Giuseppe CalГ  <jiveaxe@gmail.com>
-# Contributer: giacomogiorgianni@gmail.com
-# Contributor: TingPing <tingping@tingping.se>
+# Maintainer and Contributor: Vladimir Kamensky  <mastersoft24@yandex.ru>
+
 
 pkgname=Grive2
 pkgver=0.1
@@ -21,8 +20,9 @@ depends=('json-c' 'curl' 'boost-libs' 'expat' 'libgcrypt' 'yajl')
 makedepends=('cmake' 'git' 'boost' 'yajl' 'json-c' )
 options=(!emptydirs)
 
-source=("https://github.com/MasterSoft24/Grive2/archive/v$pkgver.tar.gz")
-md5sums=('87cf3ac03cd1288819aa9b38025e7837')
+#source=("https://github.com/MasterSoft24/Grive2/archive/v$pkgver.tar.gz")
+source=Grive2-0.1.zip
+md5sums=('e853401ddd80f33c0e9412af5d8c4032')
 
 
 build() {
@@ -41,9 +41,9 @@ if [ "${CARCH}" = 'i686' ]; then
    sed -i '256s|m_cstamp) |(boost::uint64_t)m_cstamp) |g' libgrive/src/drive/State.cc
 fi 
 
-#rm -rf build
-  #mkdir build
-  #cd build
+  rm -rf build
+  mkdir build
+  cd build
   cmake .. -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_EXE_LINKER_FLAGS=-ljson-c
   #sed -i '225s|libjson|libjson-c|g' CMakeCache.txt
@@ -52,7 +52,7 @@ fi
 }
  
 package() {
-	cd "$srcdir/grive-$pkgver/build"
+	cd "$srcdir/$pkgname-$pkgver/build"
 	
 	make DESTDIR="$pkgdir" install
 	#install -D "$srcdir/grive-$pkgver/build/grive/grive" "$pkgdir/usr/bin/grive"
