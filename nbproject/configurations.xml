@@ -2,6 +2,16 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="/home/ms/NetBeansProjects/grive" name="0">
+      <df name="CMakeFiles">
+        <df name="3.0.2">
+          <df name="CompilerIdC">
+            <in>CMakeCCompilerId.c</in>
+          </df>
+          <df name="CompilerIdCXX">
+            <in>CMakeCXXCompilerId.cpp</in>
+          </df>
+        </df>
+      </df>
       <df name="grive">
         <df name="src">
           <in>main.cc</in>
@@ -102,24 +112,20 @@
       </codeAssistance>
       <makefileType>
         <makeTool>
-          <buildCommandWorkingDir>/home/ms/NetBeansProjects/grive</buildCommandWorkingDir>
+          <buildCommandWorkingDir>/home/ms/NetBeansProjects/grive/build</buildCommandWorkingDir>
           <buildCommand>${MAKE} -f Makefile</buildCommand>
           <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
-          <executablePath>/home/ms/NetBeansProjects/grive/grive/grive2</executablePath>
-          <ccTool>
-            <incDir>
-              <pElem>libgrive/src</pElem>
-            </incDir>
-            <preprocessorList>
-              <Elem>VERSION="0.1"</Elem>
-              <Elem>_FILE_OFFSET_BITS=64</Elem>
-            </preprocessorList>
-          </ccTool>
+          <executablePath>/home/ms/NetBeansProjects/grive/build/grive/grive2</executablePath>
         </makeTool>
       </makefileType>
-      <item path="/home/ms/NetBeansProjects/grive/PKGBUILD"
+      <item path="/home/ms/NetBeansProjects/grive/CMakeFiles/3.0.2/CompilerIdC/CMakeCCompilerId.c"
             ex="false"
-            tool="3"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/CMakeFiles/3.0.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+            ex="false"
+            tool="1"
             flavor2="0">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/grive/src/main.cc"
@@ -360,19 +366,27 @@
       <folder path="0/grive">
         <ccTool>
           <incDir>
-            <pElem>grive</pElem>
+            <pElem>libgrive/src</pElem>
+            <pElem>build/grive</pElem>
           </incDir>
+          <preprocessorList>
+            <Elem>VERSION="0.1"</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
+          </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/libgrive">
         <ccTool>
           <incDir>
+            <pElem>libgrive/src</pElem>
             <pElem>libgrive/test</pElem>
-            <pElem>libgrive</pElem>
+            <pElem>build/libgrive</pElem>
           </incDir>
           <preprocessorList>
             <Elem>SRC_DIR="/home/ms/NetBeansProjects/grive/libgrive/src"</Elem>
             <Elem>TEST_DATA="/home/ms/NetBeansProjects/grive/libgrive/test/data/"</Elem>
+            <Elem>VERSION="0.1"</Elem>
+            <Elem>_FILE_OFFSET_BITS=64</Elem>
           </preprocessorList>
         </ccTool>
       </folder>
