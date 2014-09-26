@@ -44,7 +44,7 @@ public :
 	struct Error : virtual Exception {} ;
 	typedef boost::error_info<struct FileTag, std::string>	File ;
         
-        std::vector<std::string> m_exclude;
+
 
 	Config( const boost::program_options::variables_map& vm ) ;
 

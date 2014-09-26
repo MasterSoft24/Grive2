@@ -57,10 +57,15 @@ namespace
 Drive::Drive( http::Agent *agent, const Json& options ) :
 	m_http		( agent ),
 	m_root		( options["path"].Str() ),
-	m_state		( m_root / state_file, options ),
+	m_state		( m_root / state_file, options ),//  
 	m_options	( options )
 {
+       
 	assert( m_http != 0 ) ;
+//                std::string s= m_root.string();
+//        s=s+"/"+state_file;
+//        state_file=s;
+//       // state_file=m_root.string().c_str() / state_file;
 }
 
 void Drive::FromRemote( const Entry& entry )
@@ -92,7 +97,10 @@ void Drive::FromChange( const Entry& entry )
 
 void Drive::SaveState()
 {
-	m_state.Write( state_file ) ;
+        std::string s= m_root.string();
+        s=s+"/"+state_file;
+        //state_file=s;
+	m_state.Write( s ) ;
 }
 
 void Drive::SyncFolders( )

@@ -301,11 +301,11 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --list</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --list >/home/ms/GoogleDrive/.exclude</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}" </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" --dry-run -p /home/ms/GoogleDrive</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" </runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive</runcommand>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
         <rundir>.</rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
