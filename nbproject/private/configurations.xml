@@ -283,8 +283,6 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
-        <gdb_signals>
-        </gdb_signals>
         <gdb_options>
           <DebugOptions>
           </DebugOptions>
@@ -300,10 +298,10 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --a</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --list</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive --list >/home/ms/GoogleDrive/.exclude</runcommandpicklistitem>
-          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" --dry-run -p /home/ms/GoogleDrive</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" </runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
         </runcommandpicklist>
         <runcommand>"${OUTPUT_PATH}"</runcommand>
         <rundir>.</rundir>

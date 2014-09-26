@@ -117,6 +117,11 @@
           </ccTool>
         </makeTool>
       </makefileType>
+      <item path="/home/ms/NetBeansProjects/grive/PKGBUILD"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="/home/ms/NetBeansProjects/grive/grive/src/main.cc"
             ex="false"
             tool="1"
