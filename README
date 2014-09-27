@@ -12,7 +12,6 @@ directory named .trash or put them in the Google Drive trash. You can always rec
 
 There are a few things that Grive2 does not do at the moment:
 - wait for changes in file system to occur and upload. A sync is only performed when you run Grive.
-- symbolic links support
 - support for Google documents
   
 Of course these will be added in the future, possibly the next release.
@@ -44,6 +43,15 @@ an authenication code. Copy-and-paste that to the standard input of Grive2.
 
 If everything works fine, Grive2 will create .grive  file in your
 current directory. 
+
+
+After that, you can either run grive2 for full synchronization
+or create the file .exclude and add the full path of the files that should be 
+excluded from synchronization. 
+To simplify somewhat the operation, you can run with the option grive2 --list 
+and get a list of all the files in your Google drive
+
+
 
 Enjoy!
 
