@@ -1,5 +1,5 @@
-Grive2 0.1
-25 September 2014
+Grive2 v0.2
+18 November 2014
 
  http://mastersoft24.github.io/Grive2
 
@@ -48,6 +48,8 @@ current directory.
 After that, you can either run grive2 for full synchronization
 or create the file .exclude and add the full path of the files that should be 
 excluded from synchronization. 
+Alternatively, you may create .include file and add files what you want to sync. 
+For use this feature you must use --use-include parameter
 To simplify somewhat the operation, you can run with the option grive2 --list 
 and get a list of all the files in your Google drive
 
@@ -56,6 +58,11 @@ and get a list of all the files in your Google drive
 Enjoy!
 
 Version History:
+
+Grive2 v0.2:
+New features:
+        : possibility of using .include file list instead .exclude
+        : --use-include parameter added
 
 Grive2 v0.1: 
 New features:

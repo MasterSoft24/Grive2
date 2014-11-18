@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Grive version. remember to update it for every new release!
-set( GRIVE2_VERSION "0.1" )
+set( GRIVE2_VERSION "0.2" )
 
 # common compile options
 add_definitions( -DVERSION="${GRIVE2_VERSION}" )

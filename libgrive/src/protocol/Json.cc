@@ -226,12 +226,16 @@ Json Json::operator[]( const std::string& key ) const
 	assert( m_json != 0 ) ;
 	
 	struct json_object *j = 0 ;
-	if ( !::json_object_object_get_ex( m_json, key.c_str(), &j ) )
+	if ( !::json_object_object_get_ex( m_json, key.c_str(), &j ) ){
+            std::cout<<"\nWrong a .grive file. Possibly access token has expired. \nRun grive2 -a for re-authorization.\n\n";
 		BOOST_THROW_EXCEPTION(
 			Error()
 				<< JsonCApi_( "json_object_object_get" )
 				<< KeyNotFound_( key )
 				<< Json_( ::json_object_to_json_string(m_json) ) ) ;
+                
+                
+        }
 	
 	assert( j != 0 ) ;
 	return Json( j ) ;

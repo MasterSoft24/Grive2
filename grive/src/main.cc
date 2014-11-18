@@ -68,6 +68,7 @@ const std::string client_secret	= "HMQXlR2HDhrw58KR5lDQYKea" ;
 extern std::vector<std::string> exclude_file;
 extern std::string path_to_sync_dir;
 extern std::string work_dir;
+extern bool use_include;
 
 //=======================
 
@@ -215,6 +216,7 @@ int Main( int argc, char **argv )
 		( "dry-run",	"Only detect which files need to be uploaded/downloaded, "
 						"without actually performing them." )
                 ( "list,s",		"Produce Google drive remote file list" )
+                ( "use-include",		"Use .include file instead .exclude" )
 	;
 	
 	po::variables_map vm;
@@ -304,6 +306,9 @@ int Main( int argc, char **argv )
             return 0;
         }
         
+        
+
+        
         // read exclude config file
         
             std::string w_path;
@@ -315,9 +320,18 @@ int Main( int argc, char **argv )
                 path_to_sync_dir=w_path;
             }
             
-            w_path+="/.exclude";
             
-           
+            
+            
+            if ( vm.count( "use-include" ) != 0 ){// use .include instead .exclude
+
+                w_path+="/.include";
+                use_include=true;
+            } 
+            else{
+                w_path+="/.exclude";
+                use_include=false;
+            }
             
         
 

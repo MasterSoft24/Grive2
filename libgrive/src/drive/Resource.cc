@@ -54,6 +54,7 @@
 
 std::vector<std::string> exclude_file;
 std::string path_to_sync_dir;
+bool use_include;
 
 namespace gr { namespace v1 {
 
@@ -397,11 +398,11 @@ bool PartialMatchTest(std::string pattern,std::string path){
                 path_len--;
                 patt_len--;
                 
-                if(path_len < 0){// the path completely contains in a pattern as initial substring
+                if(path_len <= 0){// the path completely contains in a pattern as initial substring
                     return true;
                 }
                 
-                if(patt_len < 0){
+                if(patt_len <= 0){
                     return true;
                 }
             }
@@ -441,17 +442,52 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
             fp=current->Name()+"/"+fp;
         }
         
+        
+        
         replace(fp,path_to_sync_dir,".");
+        
+       
         
         if(fp!="."){
             
-            for(std::vector<std::string>::iterator i=exclude_file.begin();i!=exclude_file.end();i++){
+          // std::cout<< "\n";
+            bool match=false;
+            
+            for( std::vector<std::string>::iterator i=exclude_file.begin();i!=exclude_file.end();i++){
                 
-                int res=fnmatch((*i).c_str(),fp.c_str(),FNM_FILE_NAME|FNM_NOESCAPE|FNM_LEADING_DIR|FNM_PERIOD);
                 
-                if( (res)!=FNM_NOMATCH ){
-                    return;
+                
+                if( !use_include ){
+                    int res=fnmatch((*i).c_str(),fp.c_str(),FNM_FILE_NAME|FNM_NOESCAPE|FNM_LEADING_DIR|FNM_PERIOD);
+
+                        if( (res)!=FNM_NOMATCH  ){
+                            return;
+                        }
                 }
+                else{
+                   // int res=fnmatch((*i).c_str(),fp.c_str(),FNM_FILE_NAME|FNM_NOESCAPE|FNM_LEADING_DIR|FNM_PERIOD);
+                    bool res=PartialMatchTest(*i,fp);
+                    char tt=fp[10000];
+                    if(  (res)){//!=FNM_NOMATCH 
+                        match=true;
+//                        std::cout<< *i+" == "+fp;
+//                        std::cout<<"   MATCHED!!!!!\n";
+                    }
+                    else{
+//                        std::cout<< *i+" == "+fp;
+//                        std::cout<<"   NOT MATCHED!!!!!\n";
+                    }
+                }
+
+//                else{
+//                    if( (res)!=FNM_NOMATCH ){
+//                        return;
+//                    }                    
+//                }
+            }
+            
+            if((!match)&&(use_include)){
+                 return;
             }
             
         }
