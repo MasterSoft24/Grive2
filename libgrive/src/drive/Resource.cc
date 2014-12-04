@@ -377,7 +377,6 @@ Resource* Resource::FindChild( const std::string& name )
 
 
 
-// ABSOLETE CODE NEED REMOVE
 std::string ptrn="./11/copy-fs";// exclude from sync
 
 bool PartialMatchTest(std::string pattern,std::string path){
@@ -403,7 +402,7 @@ bool PartialMatchTest(std::string pattern,std::string path){
                 }
                 
                 if(patt_len <= 0){
-                    return true;
+                    return false;
                 }
             }
             else{
@@ -415,7 +414,6 @@ bool PartialMatchTest(std::string pattern,std::string path){
     return false;
 }
 
-//=====END OF ABSOLETE CODE NEED REMOVE ==================================
 
 
 bool replace(std::string& str, const std::string& from, const std::string& to) {
@@ -442,11 +440,7 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
             fp=current->Name()+"/"+fp;
         }
         
-        
-        
         replace(fp,path_to_sync_dir,".");
-        
-       
         
         if(fp!="."){
             
