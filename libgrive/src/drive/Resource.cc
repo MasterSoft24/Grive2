@@ -278,7 +278,9 @@ void Resource::FromLocal( const DateTime& last_sync )
 		// remote_deleted first, it will be updated to sync/remote_changed
 		// in FromRemote()
 		else
-			m_state = ( m_mtime > last_sync ? local_new : remote_deleted ) ;
+			m_state = ( m_mtime > last_sync ? local_new : remote_deleted ) ;// <- original
+                
+                        //m_state = ( m_mtime > last_sync ? local_new : local_new ) ;// <-  так можно дать преимущество локальным файлам
 		
 		m_name		= path.filename().string() ;
 		m_kind		= fs::is_directory(path) ? "folder"	: "file" ;

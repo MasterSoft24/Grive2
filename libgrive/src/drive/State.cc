@@ -251,12 +251,23 @@ void State::Read( const fs::path& filename )
 void State::Write( const fs::path& filename ) const
 {
 	Json last_sync ;
+#ifdef __amd64__
 	last_sync.Add( "sec",	Json(m_last_sync.Sec() ) );
 	last_sync.Add( "nsec",	Json(m_last_sync.NanoSec() ) );
+#else
+	last_sync.Add( "sec",	Json((boost::uint64_t)m_last_sync.Sec() ) );
+	last_sync.Add( "nsec",	Json((boost::uint64_t)m_last_sync.NanoSec() ) );
+#endif
+
 	
 	Json result ;
 	result.Add( "last_sync", last_sync ) ;
+#ifdef __amd64__
 	result.Add( "change_stamp", Json(m_cstamp) ) ;
+
+#else
+	result.Add( "change_stamp", Json((boost::uint64_t)m_cstamp) ) ;
+#endif
 	
 	std::ofstream fs( filename.string().c_str() ) ;
 	fs << result ;

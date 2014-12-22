@@ -7,7 +7,7 @@
 #  JSONC_LIBRARY     - The JSON-C library to link against.
 
 FIND_PATH(JSONC_INCLUDE_DIR json-c/json.h)
-FIND_LIBRARY(JSONC_LIBRARY NAMES json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json)
+FIND_LIBRARY(JSONC_LIBRARY NAMES json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json-c json)
 
 IF (JSONC_INCLUDE_DIR AND JSONC_LIBRARY)
    SET(JSONC_FOUND TRUE)
