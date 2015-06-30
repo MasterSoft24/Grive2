@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	grive: an GPL program to sync a local directory with Google Drive
+	Copyright (C) 2013 Wan Wai Ho
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -17,7 +14,8 @@
 
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA  02110-1301, USA.
 */
 
 #include "JsonParser.hh"
@@ -41,7 +39,7 @@ namespace
 	int OnBool( void *ctx, int value )
 	{
 		ValVisitor *b = reinterpret_cast<ValVisitor*>(ctx) ;
-		b->Visit( static_cast<long long>(value) ) ;
+		b->Visit( static_cast<bool>(value) ) ;
 		return true ;
 	}
 	
@@ -116,11 +114,22 @@ namespace
 	};  
 }
 
-void JsonParser::Parse( const std::string& json, ValVisitor *callback )
+Val ParseJson( const std::string& json )
 {
-	JsonParser parser( callback ) ;
+	ValBuilder b;
+	JsonParser parser( &b ) ;
 	parser.Parse( json.c_str(), json.size() ) ;
 	parser.Finish() ;
+	return b.Result();
+}
+
+Val ParseJson( DataStream &in )
+{
+	ValBuilder b;
+	JsonParser parser( &b ) ;
+	parser.Parse( in ) ;
+	parser.Finish() ;
+	return b.Result();
 }
 
 struct JsonParser::Impl
@@ -158,6 +167,17 @@ void JsonParser::Parse( const char *str, std::size_t size )
 				<< ParseErr_(msg_str)
 				<< JsonText_(std::string(str,size))
 		);
+	}
+}
+
+void JsonParser::Parse( DataStream &in )
+{
+	char buf[1024] ;
+	std::size_t count = 0 ;
+
+	while ( (count = in.Read( buf, sizeof(buf) ) ) > 0 )
+	{
+		Parse( buf, count );
 	}
 }
 

@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	grive: an GPL program to sync a local directory with Google Drive
+	Copyright (C) 2013 Wan Wai Ho
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -17,7 +14,8 @@
 
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA  02110-1301, USA.
 */
 
 #include "Val.hh"
@@ -109,17 +107,26 @@ std::string Val::Str() const
 	return As<std::string>() ;
 }
 
-int     Val::Int() const
+Val::operator std::string() const
 {
+	return As<std::string>() ;
+}
+
+int Val::Int() const
+{
+	if ( Type() == string_type )
+		return std::atoi( As<std::string>().c_str() );
 	return static_cast<int>(As<long long>()) ;
 }
 
-double	Val::Double() const
+double Val::Double() const
 {
+	if ( Type() == string_type )
+		return std::atof( As<std::string>().c_str() );
 	return As<double>() ;
 }
 
-bool	Val::Bool() const
+bool Val::Bool() const
 {
 	return As<bool>() ;
 }
@@ -156,6 +163,11 @@ bool Val::Get( const std::string& key, Val& val ) const
 void Val::Add( const std::string& key, const Val& value )
 {
 	As<Object>().insert( std::make_pair(key, value) ) ;
+}
+
+void Val::Add( const Val& json )
+{
+	As<Array>().push_back( json ) ;
 }
 
 void Val::Visit( ValVisitor *visitor ) const

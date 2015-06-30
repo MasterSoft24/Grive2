@@ -10,5 +10,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="main"/>
+        <group/>
+        <group name="Grive2">
+            <file>file:/home/ms/NetBeansProjects/grive/grive/src/main.cc</file>
+            <file>file:/home/ms/NetBeansProjects/grive/libgrive/src/protocol/OAuth2.cc</file>
+            <file>file:/home/ms/NetBeansProjects/grive/libgrive/src/protocol/OAuth2.hh</file>
+            <file>file:/home/ms/NetBeansProjects/grive/libgrive/src/http/CurlAgent.cc</file>
+            <file>file:/home/ms/NetBeansProjects/grive/libgrive/src/http/CurlAgent.hh</file>
+            <file>file:/home/ms/NetBeansProjects/grive/CMakeLists.txt</file>
+            <file>file:/home/ms/NetBeansProjects/grive/grive/CMakeLists.txt</file>
+            <file>file:/home/ms/NetBeansProjects/grive/libgrive/src/util/Config.hh</file>
+            <file>file:/home/ms/NetBeansProjects/grive/libgrive/src/util/Config.cc</file>
+            <file>file:/home/ms/NetBeansProjects/grive/libgrive/src/drive/Resource.cc</file>
+            <file>file:/home/ms/NetBeansProjects/grive/libgrive/src/drive/State.cc</file>
+        </group>
     </open-files>
 </project-private>

@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	REST API item list ("Feed") implementation
+	Copyright (C) 2015  Vitaliy Filippov
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -20,53 +17,42 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include "Feed.hh"
+#include "CommonUri.hh"
+#include "Feed2.hh"
+#include "Entry2.hh"
 
 #include "http/Agent.hh"
 #include "http/Header.hh"
+#include "json/Val.hh"
 #include "json/ValResponse.hh"
 
 #include <iostream>
+#include <boost/format.hpp>
 
 namespace gr { namespace v2 {
 
-Feed::Feed( const std::string& base ) :
-	m_base( base )
+Feed2::Feed2( const std::string& url ):
+	Feed( url )
 {
-	// Next() will grab this link
-	m_content.Add( "nextLink", Val(base) ) ;
 }
 
-void Feed::Query( const std::string& field, const std::string& value )
+bool Feed2::GetNext( http::Agent *http )
 {
-	std::string url = m_content["nextLink"].Str() ;
-	m_content.Add( "nextLink", Val( url + "?q=" + field + "+%3d+%27" + value + "%27" ) ) ;
-}
-
-bool Feed::Next( http::Agent *agent )
-{
-	Val url ;
-	if ( !m_content.Get("nextLink", url) )
+	if ( m_next.empty() )
 		return false ;
 	
 	http::ValResponse out ;
-	try
-	{
-		agent->Get( url.Str(), &out, http::Header() ) ;
-	}
-	catch ( Exception& e )
-	{
-		e << DriveFeed_( m_content ) ;
-		throw ;
-	}
-	m_content = out.Response() ;
+	http->Get( m_next, &out, http::Header() ) ;
+	Val m_content = out.Response() ;
 	
+	Val::Array items = m_content["items"].AsArray() ;
+	m_entries.clear() ;
+	for ( Val::Array::iterator i = items.begin() ; i != items.end() ; ++i )
+		m_entries.push_back( Entry2( *i ) );
+	
+	Val url ;
+	m_next = m_content.Get( "nextLink", url ) ? url : std::string( "" ) ;
 	return true ;
 }
 
-Val Feed::Content() const
-{
-	return m_content ;
-}
-
-} } // end of namespace
+} } // end of namespace gr::v2

@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -24,6 +21,7 @@
 
 #include "Error.hh"
 #include "Node.hh"
+#include "util/log/Log.hh"
 
 #include <expat.h>
 
@@ -75,8 +73,10 @@ void TreeBuilder::ParseData( const char *data, std::size_t count, bool last )
 {
 	is_new = false ;
 
-	if ( ::XML_Parse( m_impl->psr, data, count, last ) == 0 )
+	if ( ::XML_Parse( m_impl->psr, data, count, last ) == 0 ) {
+		Log("Error parsing XML: %1%", data, log::error);
 		BOOST_THROW_EXCEPTION( Error() << ExpatApiError("XML_Parse") );
+	}
 }
 
 Node TreeBuilder::Parse( const std::string& xml )

@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	Item list ("Feed") implementation for the old "Document List" Google Docs API
+	Copyright (C) 2012  Wan Wai Ho, (C) 2015 Vitaliy Filippov
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -20,15 +17,24 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include "CommonUri.hh"
-#include <boost/format.hpp>
+#pragma once
+
+#include "base/Feed.hh"
+
+#include "xml/Node.hh"
+#include "xml/NodeSet.hh"
+
+#include <vector>
+
+#include <string>
 
 namespace gr { namespace v1 {
 
-std::string ChangesFeed( int changestamp )
+class Feed1: public Feed
 {
-	boost::format feed( feed_changes + "?start-index=%1%" ) ;
-	return changestamp > 0 ? (feed%changestamp).str() : feed_changes ;
-}
+public :
+	Feed1( const std::string& url ) ;
+	bool GetNext( http::Agent *http ) ;
+} ;
 
-} }
+} } // end of namespace gr::v1

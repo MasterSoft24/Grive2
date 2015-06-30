@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -20,30 +17,18 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include "util/Config.hh"
-
 #include "Resource.hh"
-#include "CommonUri.hh"
 #include "Entry.hh"
+#include "Syncer.hh"
 
-#include "http/Agent.hh"
-#include "http/Download.hh"
-#include "http/Header.hh"
-// #include "http/ResponseLog.hh"
-#include "http/StringResponse.hh"
-#include "http/XmlResponse.hh"
-#include "protocol/Json.hh"
+#include "json/Val.hh"
 #include "util/CArray.hh"
 #include "util/Crypt.hh"
 #include "util/log/Log.hh"
 #include "util/OS.hh"
 #include "util/File.hh"
-#include "xml/Node.hh"
-#include "xml/NodeSet.hh"
-#include "xml/String.hh"
 
 #include <boost/bind.hpp>
-#include <boost/exception/all.hpp>
 
 #include <cassert>
 
@@ -52,31 +37,23 @@
 
 #include <fnmatch.h>
 
+
 std::vector<std::string> exclude_file;
 std::string path_to_sync_dir;
 bool use_include;
 
-namespace gr { namespace v1 {
 
-// hard coded XML file
-const std::string xml_meta =
-	"<?xml version='1.0' encoding='UTF-8'?>\n"
-	"<entry xmlns=\"http://www.w3.org/2005/Atom\" xmlns:docs=\"http://schemas.google.com/docs/2007\">"
-		"<category scheme=\"http://schemas.google.com/g/2005#kind\" "
-		"term=\"http://schemas.google.com/docs/2007#%1%\"/>"
-		"<title>%2%</title>"
-	"</entry>" ;
-
+namespace gr {
 
 /// default constructor creates the root folder
-Resource::Resource(const fs::path& root_folder) :
+Resource::Resource( const fs::path& root_folder ) :
 	m_name		( root_folder.string() ),
 	m_kind		( "folder" ),
 	m_id		( "folder:root" ),
-	m_href		( root_href ),
-	m_create	( root_create ),
+	m_href		( "root" ),
 	m_parent	( 0 ),
-	m_state		( sync )
+	m_state		( sync ),
+	m_is_editable( true )
 {
 }
 
@@ -84,7 +61,8 @@ Resource::Resource( const std::string& name, const std::string& kind ) :
 	m_name		( name ),
 	m_kind		( kind ),
 	m_parent	( 0 ),
-	m_state		( unknown )
+	m_state		( unknown ),
+	m_is_editable( true )
 {
 }
 
@@ -105,7 +83,7 @@ void Resource::FromRemoteFolder( const Entry& remote, const DateTime& last_sync 
 {
 	fs::path path = Path() ;
 	
-	if ( remote.CreateLink().empty() )
+	if ( !remote.IsEditable() )
 		Log( "folder %1% is read-only", path, log::verbose ) ;
 		
 	// already sync
@@ -153,7 +131,7 @@ void Resource::FromRemoteFolder( const Entry& remote, const DateTime& last_sync 
 void Resource::FromRemote( const Entry& remote, const DateTime& last_sync )
 {
 	// sync folder
-	if ( remote.Kind() == "folder" && IsFolder() )
+	if ( remote.IsDir() && IsFolder() )
 		FromRemoteFolder( remote, last_sync ) ;
 	else
 		FromRemoteFile( remote, last_sync ) ;
@@ -176,9 +154,8 @@ void Resource::AssignIDs( const Entry& remote )
 	{
 		m_id		= remote.ResourceID() ;
 		m_href		= remote.SelfHref() ;
-		m_edit		= remote.EditLink() ;
-		m_create	= remote.CreateLink() ;
 		m_content	= remote.ContentSrc() ;
+		m_is_editable = remote.IsEditable() ;
 		m_etag		= remote.ETag() ;
 	}
 }
@@ -263,7 +240,7 @@ void Resource::FromRemoteFile( const Entry& remote, const DateTime& last_sync )
 void Resource::FromLocal( const DateTime& last_sync )
 {
 	fs::path path = Path() ;
-	assert( fs::exists( path ) ) ;
+	//assert( fs::exists( path ) ) ;
 
 	// root folder is always in sync
 	if ( !IsRoot() )
@@ -281,8 +258,8 @@ void Resource::FromLocal( const DateTime& last_sync )
 			m_state = ( m_mtime > last_sync ? local_new : remote_deleted ) ;
 		
 		m_name		= path.filename().string() ;
-		m_kind		= fs::is_directory(path) ? "folder"	: "file" ;
-		m_md5		= fs::is_directory(path) ? ""		: crypt::MD5::Get( path ) ;
+		m_kind		= IsFolder() ? "folder" : "file" ;
+		m_md5		= IsFolder() ? ""		: crypt::MD5::Get( path ) ;
 	}
 	
 	assert( m_state != unknown ) ;
@@ -293,14 +270,39 @@ std::string Resource::SelfHref() const
 	return m_href ;
 }
 
+std::string Resource::ContentSrc() const
+{
+	return m_content ;
+}
+
+std::string Resource::ETag() const
+{
+	return m_etag ;
+}
+
 std::string Resource::Name() const
 {
 	return m_name ;
 }
 
+std::string Resource::Kind() const
+{
+	return m_kind ;
+}
+
+DateTime Resource::MTime() const
+{
+	return m_mtime ;
+}
+
 std::string Resource::ResourceID() const
 {
 	return m_id ;
+}
+
+Resource::State Resource::GetState() const
+{
+	return m_state ;
 }
 
 const Resource* Resource::Parent() const
@@ -325,29 +327,14 @@ void Resource::AddChild( Resource *child )
 	m_child.push_back( child ) ;
 }
 
-void Resource::Swap( Resource& coll )
-{
-	m_name.swap( coll.m_name ) ;
-	m_kind.swap( coll.m_kind ) ;
-	m_md5.swap( coll.m_md5 ) ;
-	m_etag.swap( coll.m_etag ) ;
-	m_id.swap( coll.m_id ) ;
-
-	m_href.swap( coll.m_href ) ;
-	m_content.swap( coll.m_content ) ;	
-	m_edit.swap( coll.m_edit ) ;
-	m_create.swap( coll.m_create ) ;
-	
-	m_mtime.Swap( coll.m_mtime ) ;
-	
-	std::swap( m_parent, coll.m_parent ) ;
-	m_child.swap( coll.m_child ) ;
-	std::swap( m_state, coll.m_state ) ;
-}
-
 bool Resource::IsFolder() const
 {
 	return m_kind == "folder" ;
+}
+
+bool Resource::IsEditable() const
+{
+	return m_is_editable ;
 }
 
 fs::path Resource::Path() const
@@ -361,7 +348,7 @@ fs::path Resource::Path() const
 bool Resource::IsInRootTree() const
 {
 	assert( m_parent == 0 || m_parent->IsFolder() ) ;
-	return m_parent == 0 ? (SelfHref() == root_href) : m_parent->IsInRootTree() ;
+	return m_parent == 0 ? IsRoot() : m_parent->IsInRootTree() ;
 }
 
 Resource* Resource::FindChild( const std::string& name )
@@ -375,9 +362,6 @@ Resource* Resource::FindChild( const std::string& name )
 	return 0 ;
 }
 
-
-
-std::string ptrn="./11/copy-fs";// exclude from sync
 
 bool PartialMatchTest(std::string pattern,std::string path){
     
@@ -424,12 +408,13 @@ bool replace(std::string& str, const std::string& from, const std::string& to) {
     return true;
 }
 
+
 // try to change the state to "sync"
-void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options )
+void Resource::Sync( Syncer *syncer, DateTime& sync_time, const Val& options )
 {
 	assert( m_state != unknown ) ;
 	assert( !IsRoot() || m_state == sync ) ;	// root folder is already synced
-	
+        
         
 // ==== EXCLUDING FROM SYNC =====    
         
@@ -437,16 +422,16 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
         std::string fp=this->Name();
         Resource* current=this;
         while((current=current->m_parent)!=0){           
-            fp=current->Name()+"/"+fp;
+            fp=current->Name()+"/"+fp; 
         }
         
-        replace(fp,path_to_sync_dir,".");
+        replace(fp,path_to_sync_dir,"");
         
-        if(fp!="."){
+        if(fp!=""){
             
           // std::cout<< "\n";
             bool match=false;
-            
+             
             for( std::vector<std::string>::iterator i=exclude_file.begin();i!=exclude_file.end();i++){
                 
                 
@@ -486,9 +471,9 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
             
         }
         
-//===============================
-        
-	SyncSelf( http, options ) ;
+//===============================        
+	
+	SyncSelf( syncer, options ) ;
 	
 	// we want the server sync time, so we will take the server time of the last file uploaded to store as the sync time
 	// m_mtime is updated to server modified time when the file is uploaded
@@ -497,55 +482,48 @@ void Resource::Sync( http::Agent *http, DateTime& sync_time, const Json& options
 	// if myself is deleted, no need to do the childrens
 	if ( m_state != local_deleted && m_state != remote_deleted )
 		std::for_each( m_child.begin(), m_child.end(),
-			boost::bind( &Resource::Sync, _1, http, boost::ref(sync_time), options ) ) ;
+			boost::bind( &Resource::Sync, _1, syncer, boost::ref(sync_time), options ) ) ;
 }
 
-void Resource::SyncSelf( http::Agent* http, const Json& options )
+void Resource::SyncSelf( Syncer* syncer, const Val& options )
 {
 	assert( !IsRoot() || m_state == sync ) ;	// root is always sync
-	assert( IsRoot() || http == 0 || fs::is_directory( m_parent->Path() ) ) ;
+	assert( IsRoot() || !syncer || m_parent->IsFolder() ) ;
 	assert( IsRoot() || m_parent->m_state != remote_deleted ) ;
 	assert( IsRoot() || m_parent->m_state != local_deleted ) ;
 
 	const fs::path path = Path() ;
 
-       // m_state=sync;
-
-//        if(path.string()=="./fuck")m_state=my;
-//        if(path.string()=="./fuck/tst"){
-//            m_state=my; 
-//        }
-//        if(path.string()=="./fuck/xbox-1")m_state=my;        
-        
 	switch ( m_state )
 	{
 	case local_new :
 		Log( "sync %1% doesn't exist in server, uploading", path, log::info ) ;
 		
-		if ( http != 0 && Create( http ) )
+		// FIXME: (?) do not write new timestamp on failed upload
+		if ( syncer && syncer->Create( this ) )
 			m_state = sync ;
 		break ;
 	
 	case local_deleted :
 		Log( "sync %1% deleted in local. deleting remote", path, log::info ) ;
-		if ( http != 0 )
-			DeleteRemote( http ) ;
+		if ( syncer )
+			syncer->DeleteRemote( this ) ;
 		break ;
 	
 	case local_changed :
 		Log( "sync %1% changed in local. uploading", path, log::info ) ;
-		if ( http != 0 && EditContent( http, options["new-rev"].Bool() ) )
+		if ( syncer && syncer->EditContent( this, options["new-rev"].Bool() ) )
 			m_state = sync ;
 		break ;
 	
 	case remote_new :
 		Log( "sync %1% created in remote. creating local", path, log::info ) ;
-		if ( http != 0 )
+		if ( syncer )
 		{
 			if ( IsFolder() )
 				fs::create_directories( path ) ;
 			else
-				Download( http, path ) ;
+				syncer->Download( this, path ) ;
 			
 			m_state = sync ;
 		}
@@ -554,16 +532,16 @@ void Resource::SyncSelf( http::Agent* http, const Json& options )
 	case remote_changed :
 		assert( !IsFolder() ) ;
 		Log( "sync %1% changed in remote. downloading", path, log::info ) ;
-		if ( http != 0 )
+		if ( syncer )
 		{
-			Download( http, path ) ;
+			syncer->Download( this, path ) ;
 			m_state = sync ;
 		}
 		break ;
 	
 	case remote_deleted :
 		Log( "sync %1% deleted in remote. deleting local", path, log::info ) ;
-		if ( http != 0 )
+		if ( syncer )
 			DeleteLocal() ;
 		break ;
 	
@@ -602,148 +580,6 @@ void Resource::DeleteLocal()
 		fs::create_directories( dest.parent_path() ) ;
 		fs::rename( Path(), dest ) ;
 	}
-}
-
-void Resource::DeleteRemote( http::Agent *http )
-{
-	assert( http != 0 ) ;
-	http::StringResponse str ;
-	
-	try
-	{
-		http::Header hdr ;
-		hdr.Add( "If-Match: " + m_etag ) ;
-		
-		// doesn't know why, but an update before deleting seems to work always
-		http::XmlResponse xml ;
-		http->Get( m_href, &xml, hdr ) ;
-		AssignIDs( Entry( xml.Response() ) ) ;
-	
-		http->Custom( "DELETE", m_href, &str, hdr ) ;
-	}
-	catch ( Exception& e )
-	{
-		// don't rethrow here. there are some cases that I don't know why
-		// the delete will fail.
-		Trace( "Exception %1% %2%",
-			boost::diagnostic_information(e),
-			str.Response() ) ;
-	}
-}
-
-
-void Resource::Download( http::Agent* http, const fs::path& file ) const
-{
-	assert( http != 0 ) ;
-	
-	http::Download dl( file.string(), http::Download::NoChecksum() ) ;
-	long r = http->Get( m_content, &dl, http::Header() ) ;
-	if ( r <= 400 )
-	{
-		if ( m_mtime != DateTime() )
-			os::SetFileTime( file, m_mtime ) ;
-		else
-			Log( "encountered zero date time after downloading %1%", file, log::warning ) ;
-	}
-}
-
-bool Resource::EditContent( http::Agent* http, bool new_rev )
-{
-	assert( http != 0 ) ;
-	assert( m_parent != 0 ) ;
-	assert( m_parent->m_state == sync ) ;
-
-	// upload link missing means that file is read only
-	if ( m_edit.empty() )
-	{
-		Log( "Cannot upload %1%: file read-only. %2%", m_name, m_state, log::warning ) ;
-		return false ;
-	}
-	
-	return Upload( http, m_edit + (new_rev ? "?new-revision=true" : ""), false ) ;
-}
-
-bool Resource::Create( http::Agent* http )
-{
-	assert( http != 0 ) ;
-	assert( m_parent != 0 ) ;
-	assert( m_parent->IsFolder() ) ;
-	assert( m_parent->m_state == sync ) ;
-	
-	if ( IsFolder() )
-	{
-		std::string uri = feed_base ;
-		if ( !m_parent->IsRoot() )
-			uri += ("/" + http->Escape(m_parent->m_id) + "/contents") ;
-		
-		std::string meta = (boost::format( xml_meta )
-			% "folder"
-			% xml::Escape(m_name)
-		).str() ;
-
-		http::Header hdr ;
-		hdr.Add( "Content-Type: application/atom+xml" ) ;
-		
-		http::XmlResponse xml ;
-// 		http::ResponseLog log( "create", ".xml", &xml ) ;
-		http->Post( uri, meta, &xml, hdr ) ;
-		AssignIDs( Entry( xml.Response() ) ) ;
-
-		return true ;
-	}
-	else if ( !m_parent->m_create.empty() )
-	{
-		return Upload( http, m_parent->m_create + "?convert=false", true ) ;
-	}
-	else
-	{
-		Log( "parent of %1% does not exist: cannot upload", Name(), log::warning ) ;
-		return false ;
-	}
-}
-
-bool Resource::Upload(
-	http::Agent* 		http,
-	const std::string&	link,
-	bool 				post)
-{
-	assert( http != 0 ) ;
-	
-	File file( Path() ) ;
-	std::ostringstream xcontent_len ;
-	xcontent_len << "X-Upload-Content-Length: " << file.Size() ;
-	
-	http::Header hdr ;
-	hdr.Add( "Content-Type: application/atom+xml" ) ;
-	hdr.Add( "X-Upload-Content-Type: application/octet-stream" ) ;
-	hdr.Add( xcontent_len.str() ) ;
-  	hdr.Add( "If-Match: " + m_etag ) ;
-	hdr.Add( "Expect:" ) ;
-	
-	std::string meta = (boost::format( xml_meta )
-		% m_kind
-		% xml::Escape(m_name)
-	).str() ;
-	
-	http::StringResponse str ;
-	if ( post )
-		http->Post( link, meta, &str, hdr ) ;
-	else
-		http->Put( link, meta, &str, hdr ) ;
-	
-	http::Header uphdr ;
-	uphdr.Add( "Expect:" ) ;
-	uphdr.Add( "Accept:" ) ;
-
-	// the content upload URL is in the "Location" HTTP header
-	std::string uplink = http->RedirLocation() ;
-	http::XmlResponse xml ;
-	
-	http->Put( uplink, &file, &xml, uphdr ) ;
-	AssignIDs( Entry( xml.Response() ) ) ;
-  m_mtime = Entry(xml.Response()).MTime();
-	
-	return true ;
 }
 
 Resource::iterator Resource::begin() const
@@ -786,6 +622,7 @@ std::string Resource::MD5() const
 
 bool Resource::IsRoot() const
 {
+	// Root entry does not show up in file feeds, so we check for empty parent (and self-href)
 	return m_parent == 0 ;
 }
 
@@ -794,12 +631,4 @@ bool Resource::HasID() const
 	return !m_href.empty() && !m_id.empty() ;
 }
 
-} } // end of namespace
-
-namespace std
-{
-	void swap( gr::v1::Resource& c1, gr::v1::Resource& c2 )
-	{
-		c1.Swap( c2 ) ;
-	}
-}
+} // end of namespace

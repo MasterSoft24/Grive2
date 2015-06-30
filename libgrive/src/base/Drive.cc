@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -22,17 +19,13 @@
 
 #include "Drive.hh"
 
-#include "CommonUri.hh"
 #include "Entry.hh"
 #include "Feed.hh"
+#include "Syncer.hh"
 
 #include "http/Agent.hh"
-#include "http/ResponseLog.hh"
-#include "http/XmlResponse.hh"
 #include "util/Destroy.hh"
 #include "util/log/Log.hh"
-#include "xml/Node.hh"
-#include "xml/NodeSet.hh"
 
 #include <boost/bind.hpp>
 
@@ -47,25 +40,20 @@
 // for debugging only
 #include <iostream>
 
-namespace gr { namespace v1 {
+namespace gr {
 
 namespace
 {
 	const std::string state_file = ".grive_state" ;
 }
 
-Drive::Drive( http::Agent *agent, const Json& options ) :
-	m_http		( agent ),
+Drive::Drive( Syncer *syncer, const Val& options ) :
+	m_syncer	( syncer ),
 	m_root		( options["path"].Str() ),
-	m_state		( m_root / state_file, options ),//  
+	m_state		( m_root / state_file, options ),
 	m_options	( options )
 {
-       
-	assert( m_http != 0 ) ;
-//                std::string s= m_root.string();
-//        s=s+"/"+state_file;
-//        state_file=s;
-//       // state_file=m_root.string().c_str() / state_file;
+	assert( m_syncer ) ;
 }
 
 void Drive::FromRemote( const Entry& entry )
@@ -97,29 +85,21 @@ void Drive::FromChange( const Entry& entry )
 
 void Drive::SaveState()
 {
-        std::string s= m_root.string();
-        s=s+"/"+state_file;
-        //state_file=s;
-	m_state.Write( s ) ;
+	m_state.Write( state_file ) ;
 }
 
 void Drive::SyncFolders( )
 {
-	assert( m_http != 0 ) ;
-
 	Log( "Synchronizing folders", log::info ) ;
 
-	http::XmlResponse xml ;
-	m_http->Get( feed_base + "/-/folder?max-results=50&showroot=true", &xml, http::Header() ) ;
-	
-	Feed feed( xml.Response() ) ;
-	do
+	std::auto_ptr<Feed> feed = m_syncer->GetFolders() ;
+	while ( feed->GetNext( m_syncer->Agent() ) )
 	{
 		// first, get all collections from the query result
-		for ( Feed::iterator i = feed.begin() ; i != feed.end() ; ++i )
+		for ( Feed::iterator i = feed->begin() ; i != feed->end() ; ++i )
 		{
-			Entry e( *i ) ;
-			if ( e.Kind() == "folder" )
+			const Entry &e = *i ;
+			if ( e.IsDir() )
 			{
 				if ( e.ParentHrefs().size() != 1 )
 					Log( "folder \"%1%\" has multiple parents, ignored", e.Title(), log::verbose ) ;
@@ -131,7 +111,7 @@ void Drive::SyncFolders( )
 					m_state.FromRemote( e ) ;
 			}
 		}
-	} while ( feed.GetNext( m_http ) ) ;
+	}
 
 	m_state.ResolveEntry() ;
 }
@@ -147,43 +127,38 @@ void Drive::DetectChanges()
 	SyncFolders( ) ;
 
 	Log( "Reading remote server file list", log::info ) ;
-	Feed feed ;
+	std::auto_ptr<Feed> feed = m_syncer->GetAll() ;
+
 	if ( m_options["log-xml"].Bool() )
-		feed.EnableLog( "/tmp/file", ".xml" ) ;
+		feed->EnableLog( "/tmp/file", ".xml" ) ;
 	
-	feed.Start( m_http, feed_base + "?showfolders=true&showroot=true" ) ;
-	
-	m_resume_link = feed.Root()["link"].
-		Find( "@rel", "http://schemas.google.com/g/2005#resumable-create-media" )["@href"] ;
-		
-	do
+	while ( feed->GetNext( m_syncer->Agent() ) )
 	{
 		std::for_each(
-			feed.begin(), feed.end(),
+			feed->begin(), feed->end(),
 			boost::bind( &Drive::FromRemote, this, _1 ) ) ;
-			
-	} while ( feed.GetNext( m_http ) ) ;
+	}
 	
 	// pull the changes feed
 	if ( prev_stamp != -1 )
 	{
 		Log( "Detecting changes from last sync", log::info ) ;
-		Feed changes ;
+		feed = m_syncer->GetChanges( prev_stamp+1 ) ;
 		if ( m_options["log-xml"].Bool() )
-			feed.EnableLog( "/tmp/changes", ".xml" ) ;
-			
-		feed.Start( m_http, ChangesFeed(prev_stamp+1) ) ;
-		
-		std::for_each(
-			changes.begin(), changes.end(),
-			boost::bind( &Drive::FromChange, this, _1 ) ) ;
+			feed->EnableLog( "/tmp/changes", ".xml" ) ;
+		while ( feed->GetNext( m_syncer->Agent() ) )
+		{
+			std::for_each(
+				feed->begin(), feed->end(),
+				boost::bind( &Drive::FromChange, this, _1 ) ) ;
+		}
 	}
 }
 
 void Drive::Update()
 {
 	Log( "Synchronizing files", log::info ) ;
-	m_state.Sync( m_http, m_options ) ;
+	m_state.Sync( m_syncer, m_options ) ;
 	
 	UpdateChangeStamp( ) ;
 }
@@ -191,21 +166,14 @@ void Drive::Update()
 void Drive::DryRun()
 {
 	Log( "Synchronizing files (dry-run)", log::info ) ;
-	m_state.Sync( 0, m_options ) ;
+	m_state.Sync( NULL, m_options ) ;
 }
 
 void Drive::UpdateChangeStamp( )
 {
-	assert( m_http != 0 ) ;
-
-	// get changed feed
-	http::XmlResponse xrsp ;
-	m_http->Get( ChangesFeed(m_state.ChangeStamp()+1), &xrsp, http::Header() ) ;
-	
-	// we should go through the changes to see if it was really Grive to made that change
+	// FIXME: we should go through the changes to see if it was really Grive to made that change
 	// maybe by recording the updated timestamp and compare it?
-	m_state.ChangeStamp( 
-		std::atoi(xrsp.Response()["docs:largestChangestamp"]["@value"].front().Value().c_str()) ) ;
+	m_state.ChangeStamp( m_syncer->GetChangeStamp( m_state.ChangeStamp()+1 ) );
 }
 
-} } // end of namespace gr::v1
+} // end of namespace gr

@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -24,8 +21,10 @@
 
 #include "http/Error.hh"
 #include "http/Header.hh"
+#include "http/XmlResponse.hh"
 #include "util/log/Log.hh"
 #include "util/OS.hh"
+#include "util/File.hh"
 
 #include <cassert>
 
@@ -72,8 +71,22 @@ long AuthAgent::Put(
 	Header auth = AppendHeader(hdr) ;
 	
 	long response ;
-	while ( CheckRetry(
-		response = m_agent->Put( url, file, dest, AppendHeader(hdr) ) ) ) ;
+	bool keepTrying = true;
+	while ( keepTrying ) {
+		response = m_agent->Put( url, file, dest, auth );
+		keepTrying = CheckRetry( response );
+		if ( keepTrying ) {
+			file->Seek( 0, SEEK_SET );
+			XmlResponse *xmlResponse = dynamic_cast<XmlResponse*>(dest);
+			if( xmlResponse )
+			  xmlResponse->Clear();
+		}
+	}
+
+	// On 410 Gone or 412 Precondition failed, recovery may be possible so don't
+	// throw an exception
+	if ( response == 410 || response == 412 )
+		return response;
 	
 	return CheckHttpResponse(response, url, auth) ;
 }
@@ -155,6 +168,7 @@ bool AuthAgent::CheckRetry( long response )
 		Log( "resquest failed due to auth token expired: %1%. refreshing token",
 			response, log::warning ) ;
 			
+		os::Sleep( 5 ) ;
 		m_auth.Refresh() ;
 		return true ;
 	}

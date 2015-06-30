@@ -2,6 +2,20 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="/home/ms/NetBeansProjects/grive" name="0">
+      <df name="build">
+        <df name="CMakeFiles">
+          <df name="3.2.3">
+            <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
+            </df>
+            <df name="CompilerIdCXX">
+              <in>CMakeCXXCompilerId.cpp</in>
+            </df>
+          </df>
+          <in>feature_tests.c</in>
+          <in>feature_tests.cxx</in>
+        </df>
+      </df>
       <df name="CMakeFiles">
         <df name="3.0.2">
           <df name="CompilerIdC">
@@ -19,19 +33,39 @@
       </df>
       <df name="libgrive">
         <df name="src">
-          <df name="drive">
-            <in>CommonUri.cc</in>
+          <df name="base">
             <in>Drive.cc</in>
             <in>Entry.cc</in>
             <in>Feed.cc</in>
             <in>Resource.cc</in>
             <in>ResourceTree.cc</in>
             <in>State.cc</in>
+            <in>Syncer.cc</in>
+          </df>
+          <df name="bfd">
+            <in>Backtrace.cc</in>
+            <in>Debug.cc</in>
+            <in>SymbolInfo.cc</in>
+          </df>
+          <df name="drive">
+            <in>CommonUri.cc</in>
+            <in>Drive.cc</in>
+            <in>Entry.cc</in>
+            <in>Entry1.cc</in>
+            <in>Feed.cc</in>
+            <in>Feed1.cc</in>
+            <in>Resource.cc</in>
+            <in>ResourceTree.cc</in>
+            <in>State.cc</in>
+            <in>Syncer1.cc</in>
           </df>
           <df name="drive2">
             <in>Drive.cc</in>
+            <in>Entry2.cc</in>
             <in>Feed.cc</in>
+            <in>Feed2.cc</in>
             <in>Resource.cc</in>
+            <in>Syncer2.cc</in>
           </df>
           <df name="http">
             <in>CurlAgent.cc</in>
@@ -88,6 +122,14 @@
         </df>
       </df>
     </df>
+    <logicalFolder name="Modules"
+                   displayName="Modules"
+                   projectFiles="true"
+                   root="/usr/share/cmake-3.2/Modules">
+      <itemPath>/usr/share/cmake-3.2/Modules/CMakeCCompilerABI.c</itemPath>
+      <itemPath>/usr/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp</itemPath>
+      <itemPath>/usr/share/cmake-3.2/Modules/CMakeCompilerABI.h</itemPath>
+    </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Важные файлы"
                    projectFiles="false"
@@ -108,6 +150,10 @@
         <dependencyChecking>false</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
+      <flagsDictionary>
+        <element flagsID="0" commonFlags="-std=c++14"/>
+        <element flagsID="1" commonFlags="-std=c11"/>
+      </flagsDictionary>
       <codeAssistance>
       </codeAssistance>
       <makefileType>
@@ -121,14 +167,94 @@
       <item path="/home/ms/NetBeansProjects/grive/CMakeFiles/3.0.2/CompilerIdC/CMakeCCompilerId.c"
             ex="false"
             tool="0"
-            flavor2="0">
+            flavor2="2">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/CMakeFiles/3.0.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/build/CMakeFiles/3.2.3/CompilerIdC/CMakeCCompilerId.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/build/CMakeFiles/3.2.3/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/build/CMakeFiles/feature_tests.c"
+            ex="false"
+            tool="0"
+            flavor2="10">
+        <cTool flags="1">
+          <incDir>
+            <pElem>build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/build/CMakeFiles/feature_tests.cxx"
+            ex="false"
+            tool="1"
+            flavor2="11">
+        <ccTool flags="0">
+          <incDir>
+            <pElem>build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/grive/src/main.cc"
+            ex="false"
+            tool="1"
+            flavor2="4">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/base/Drive.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/base/Entry.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/base/Feed.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/base/Resource.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/base/ResourceTree.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/base/State.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/base/Syncer.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/bfd/Backtrace.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/bfd/Debug.cc"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/bfd/SymbolInfo.cc"
             ex="false"
             tool="1"
             flavor2="0">
@@ -136,232 +262,416 @@
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/CommonUri.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Drive.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Entry.cc"
             ex="false"
             tool="1"
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Entry1.cc"
+            ex="false"
+            tool="1"
             flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+            <Elem>VERSION="0.3"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Feed.cc"
             ex="false"
             tool="1"
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Feed1.cc"
+            ex="false"
+            tool="1"
             flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+            <Elem>VERSION="0.3"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Resource.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/ResourceTree.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/State.cc"
             ex="false"
             tool="1"
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive/Syncer1.cc"
+            ex="false"
+            tool="1"
             flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+            <Elem>VERSION="0.3"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Drive.cc"
             ex="false"
             tool="1"
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Entry2.cc"
+            ex="false"
+            tool="1"
             flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+            <Elem>VERSION="0.3"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Feed.cc"
             ex="false"
             tool="1"
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Feed2.cc"
+            ex="false"
+            tool="1"
             flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+            <Elem>VERSION="0.3"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Resource.cc"
             ex="false"
             tool="1"
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+        </ccTool>
+      </item>
+      <item path="/home/ms/NetBeansProjects/grive/libgrive/src/drive2/Syncer2.cc"
+            ex="false"
+            tool="1"
             flavor2="0">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+            <Elem>VERSION="0.3"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/CurlAgent.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/Download.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/Header.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/ResponseLog.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/StringResponse.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/http/XmlResponse.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/JsonParser.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/JsonWriter.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/Val.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/ValBuilder.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/json/ValResponse.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/AuthAgent.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/Json.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>VERSION="0.2"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/JsonResponse.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>VERSION="0.2"</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/protocol/OAuth2.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+          </preprocessorList>
+        </ccTool>
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Config.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Crypt.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/DateTime.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/Exception.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/File.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/MemMap.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/OS.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/SignalHandler.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/StdStream.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/StringStream.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/CommonLog.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/CompositeLog.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/DefaultLog.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/util/log/Log.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/Node.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/NodeSet.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/String.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/src/xml/TreeBuilder.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/JsonValTest.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/UnitTest.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
       </item>
       <item path="/home/ms/NetBeansProjects/grive/libgrive/test/btest/ValTest.cc"
             ex="false"
             tool="1"
-            flavor2="0">
+            flavor2="4">
+      </item>
+      <item path="/usr/share/cmake-3.2/Modules/CMakeCCompilerABI.c"
+            ex="false"
+            tool="0"
+            flavor2="2">
+      </item>
+      <item path="/usr/share/cmake-3.2/Modules/CMakeCXXCompilerABI.cpp"
+            ex="false"
+            tool="1"
+            flavor2="4">
       </item>
       <folder path="0/grive">
         <ccTool>
@@ -370,7 +680,7 @@
             <pElem>build/grive</pElem>
           </incDir>
           <preprocessorList>
-            <Elem>VERSION="0.1"</Elem>
+            <Elem>VERSION="0.3"</Elem>
             <Elem>_FILE_OFFSET_BITS=64</Elem>
           </preprocessorList>
         </ccTool>
@@ -380,21 +690,117 @@
           <incDir>
             <pElem>libgrive/src</pElem>
             <pElem>libgrive/test</pElem>
-            <pElem>build/libgrive</pElem>
           </incDir>
           <preprocessorList>
             <Elem>SRC_DIR="/home/ms/NetBeansProjects/grive/libgrive/src"</Elem>
             <Elem>TEST_DATA="/home/ms/NetBeansProjects/grive/libgrive/test/data/"</Elem>
-            <Elem>VERSION="0.1"</Elem>
+            <Elem>VERSION="0.3"</Elem>
             <Elem>_FILE_OFFSET_BITS=64</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/base">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/bfd">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/drive">
+        <ccTool>
+          <preprocessorList>
+            <Elem>VERSION="0.2"</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/drive2">
+        <ccTool>
+          <preprocessorList>
+            <Elem>VERSION="0.2"</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/http">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/json">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/util">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
+          </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="0/libgrive/src/xml">
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>HAVE_BFD</Elem>
           </preprocessorList>
         </ccTool>
       </folder>
       <folder path="0/libgrive/test">
         <ccTool>
+          <incDir>
+            <pElem>/usr/include/yajl</pElem>
+            <pElem>build/libgrive</pElem>
+          </incDir>
           <preprocessorList>
             <Elem>BOOST_TEST_DYN_LINK</Elem>
+            <Elem>HAVE_BFD</Elem>
           </preprocessorList>
+        </ccTool>
+      </folder>
+      <folder path="Modules">
+        <cTool>
+          <incDir>
+            <pElem>build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>build/CMakeFiles/CMakeTmp</pElem>
+          </incDir>
         </ccTool>
       </folder>
     </conf>

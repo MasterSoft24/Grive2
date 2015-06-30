@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	grive: an GPL program to sync a local directory with Google Drive
+	Copyright (C) 2013 Wan Wai Ho
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -17,11 +14,12 @@
 
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA  02110-1301, USA.
 */
 
 #include "JsonWriter.hh"
-#include "util/DataStream.hh"
+#include "util/StringStream.hh"
 
 #include <yajl/yajl_gen.h>
 
@@ -108,6 +106,14 @@ void JsonWriter::WriteCallback( void *ctx, const char *str, std::size_t size )
 	assert( pthis->m_impl->out != 0 ) ;
 	
 	pthis->m_impl->out->Write( str, size ) ;
+}
+
+std::string WriteJson( const Val& val )
+{
+	StringStream ss ;
+	JsonWriter wr( &ss ) ;
+	val.Visit( &wr ) ;
+	return ss.Str() ;
 }
 
 } // end of namespace

@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -31,13 +28,6 @@
 
 namespace gr {
 
-namespace xml
-{
-	class Node ;
-}
-
-namespace v1 {
-
 /*!	\brief	corresponds to an "entry" in the resource feed
 
 	This class is decodes an entry in the resource feed. It will stored the properties like
@@ -48,11 +38,10 @@ class Entry
 {
 public :
 	Entry( ) ;
-	explicit Entry( const xml::Node& n ) ;
 	
 	std::string Title() const ;
 	std::string Filename() const ;
-	std::string Kind() const ;
+	bool IsDir() const ;
 	std::string MD5() const ;
 	DateTime MTime() const ;
 	
@@ -62,11 +51,9 @@ public :
 	std::string ETag() const ;
 	
 	std::string SelfHref() const ;
-	std::string AltSelf() const ;
 	std::string ParentHref() const ;
 	std::string ContentSrc() const ;
-	std::string EditLink() const ;
-	std::string CreateLink() const ;
+	bool IsEditable() const ;
 	long ChangeStamp() const ;
 	
 	bool IsChange() const ;
@@ -74,30 +61,25 @@ public :
 	
 	const std::vector<std::string>& ParentHrefs() const ;
 	
-	void Swap( Entry& e ) ;
-	
-	void Update( const xml::Node& entry ) ;
-	
-private :
+protected :
 	std::string		m_title ;
 	std::string		m_filename ;
-	std::string		m_kind ;
+	bool			m_is_dir ;
 	std::string		m_md5 ;
 	std::string		m_etag ;
 	std::string		m_resource_id ;
 
 	std::vector<std::string>	m_parent_hrefs ;
-	
+
 	std::string		m_self_href ;
-	std::string		m_alt_self ;
 	std::string		m_content_src ;
-	std::string		m_edit_link ;
-	std::string		m_create_link ;
+
+	bool			m_is_editable ;
 
 	long			m_change_stamp ;
-	
+
 	DateTime		m_mtime ;
 	bool			m_is_removed ;
 } ;
 
-} } // end of namespace gr::v1
+} // end of namespace gr

@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -46,7 +43,7 @@ public :
 	
 	long Put(
 		const std::string&	url,
-		const std::string&	data,
+		const std::string&	post_data,
 		DataStream			*dest,
 		const Header&		hdr ) ;
 	
