@@ -4,6 +4,7 @@
 	
 	Copyright (C) 2012  Wan Wai Ho
 	Copyright (C) 2014  Vladimir Kamensky
+        Copyright (C) 2015  Vitaliy Filippov
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -22,20 +23,20 @@
 
 #include "util/Config.hh"
 
-#include "drive/Drive.hh"
-#include "drive2/Drive.hh"
+#include "base/Drive.hh"
+#include "drive2/Syncer2.hh"
 
 #include "http/CurlAgent.hh"
 #include "protocol/AuthAgent.hh"
 #include "protocol/OAuth2.hh"
-#include "protocol/Json.hh"
+#include "json/Val.hh"
 
 #include "bfd/Backtrace.hh"
 #include "util/Exception.hh"
 #include "util/log/Log.hh"
 #include "util/log/CompositeLog.hh"
 #include "util/log/DefaultLog.hh"
-
+#include "drive2/Feed2.hh"
 
 // boost header
 #include <boost/exception/all.hpp>
@@ -65,17 +66,19 @@ const std::string client_secret	= "HMQXlR2HDhrw58KR5lDQYKea" ;
 
 
 // ===== global vars =====
-extern std::vector<std::string> exclude_file;
-extern std::string path_to_sync_dir;
-extern std::string work_dir;
-extern bool use_include;
+ extern std::vector<std::string> exclude_file;
+ extern std::string path_to_sync_dir;
+ extern std::string work_dir;
+ extern bool use_include;
 
 //=======================
 
 std::string work_dir;
 
+
+
 using namespace gr ;
-using namespace gr::v1 ;
+//using namespace gr::v1 ;
 namespace po = boost::program_options;
 
 // libgcrypt insist this to be done in application, not library
@@ -107,7 +110,7 @@ void InitLog( const po::variables_map& vm )
 		file_log->Enable( log::critical ) ;
 		
 		// log grive version to log file
-		file_log->Log( log::Fmt("grive version " VERSION " " __DATE__ " " __TIME__), log::verbose ) ;
+		file_log->Log( log::Fmt("Grive2 version " VERSION " " __DATE__ " " __TIME__), log::verbose ) ;
 		file_log->Log( log::Fmt("current time: %1%") % DateTime::Now(), log::verbose ) ;
 		
 		comp_log->Add( file_log ) ;
@@ -126,86 +129,60 @@ void InitLog( const po::variables_map& vm )
 	LogBase::Inst( std::auto_ptr<LogBase>(comp_log.release()) ) ;
 }
 
-std::vector<std::string> file_ids;
+//std::vector<std::string> file_ids;
 
-void CollectDriveFilesIDsList(gr::v2::Resource* res, gr::v2::Drive* drive_list){
-    
-            //gr::v2::Resource* res= drive_list->Root();
+std::vector<std::string> GetDriveFilenames(v2::Syncer2 syncer, gr::AuthAgent* agent){
+        std::auto_ptr<gr::Feed> feed=  syncer.GetAll();
+        
+        bool d=feed->GetNext(agent);
+        
+       Entry e;
+      
+        std::vector<std::string> out;
+        
+        
+        gr::Feed::iterator itf= feed->begin();
+        
+        for(itf;itf!=feed->end();itf++){
+            e=*itf;
+            std::string f=e.Title();
+            Feed::iterator rs;
            
-            for(int i=0;i<res->ChildCount();i++){
-                
-                gr::v2::Resource* rs=drive_list->Find(res->At(i));
-                
-                file_ids.push_back(res->At(i));
-                
-                if(rs->ChildCount()>0){
-                    
-                    CollectDriveFilesIDsList(rs,drive_list);
-                    
-                }
-                
+            while((rs=feed->find(e.ParentHref()))!=feed->end()){
+                               f=(*rs).Title()+"/"+f;
+                               e=*rs;
             }
-}
-
-
-std::vector<std::string> GetDriveFilenames( gr::AuthAgent* agent){
-            std::vector<std::string> out;
+                            out.push_back("/"+f);            
             
-            gr::v2::Drive* drive_list=new gr::v2::Drive() ; 
-            drive_list->Refresh(agent);
-            
-            gr::v2::Resource* res= drive_list->Root();
-            
-            file_ids.clear();
-            CollectDriveFilesIDsList(res,drive_list);
-            
-            std::vector<std::string>::iterator it;
-            std::sort(file_ids.begin(), file_ids.end()); 
-            it = std::unique(file_ids.begin(), file_ids.end()); 
-            file_ids.resize(it - file_ids.begin());
-            
-            
-            for(std::vector<std::string>::iterator i=file_ids.begin();i!=file_ids.end();i++){
-                
-                gr::v2::Resource* rs=drive_list->Find(*i);
-                
-                std::string f=rs->Title();
-                while((rs=drive_list->Find(rs->Parent()))!=0){
-                    f=rs->Title()+"/"+f;
-                }
-                out.push_back("/"+f);
-               //Log("%1%",f);
-                
-            }
-            
-            // out result file list
-            
-            std::sort(out.begin(), out.end()); 
-            
-            return out;
+            //std::cout << f << "\n";
+             
+        }
+        
+        std::sort(out.begin(), out.end()); 
+        
+        return out;
 }
 
 
 int Main( int argc, char **argv )
 {
+    
      GetCurrentDir(cCurrentPath, sizeof(cCurrentPath));
      
      work_dir=&cCurrentPath[0];
-     path_to_sync_dir=work_dir;
-     
-    //std::cout << cCurrentPath;
-    //return 0;
-    // chdir(&cCurrentPath[0]);
+     path_to_sync_dir=work_dir;    
+    
     
 	InitGCrypt() ;
 	
 	// construct the program options
-	po::options_description desc( "Grive2 options" );
+	po::options_description desc( "Grive options" );
 	desc.add_options()
 		( "help,h",		"Produce help message" )
-		( "version,v",	"Display Grive2 version" )
+		( "version,v",	"Display Grive version" )
 		( "auth,a",		"Request authorization token" )
 		( "path,p",		po::value<std::string>(), "Path to sync")
+		//( "dir,s",		po::value<std::string>(), "Subdirectory to sync")
 		( "verbose,V",	"Verbose mode. Enable more messages than normal.")
 		( "log-xml",	"Log more HTTP responses as XML for debugging.")
 		( "new-rev",	"Create new revisions in server for updated files.")
@@ -241,10 +218,6 @@ int Main( int argc, char **argv )
 	
 	Config config(vm) ;
 	
-
-        
-          
-        
 	Log( "config file name %1%", config.Filename(), log::verbose );
 
 	if ( vm.count( "auth" ) )
@@ -265,7 +238,7 @@ int Main( int argc, char **argv )
 		token.Auth( code ) ;
 		
 		// save to config
-		config.Set( "refresh_token", Json( token.RefreshToken() ) ) ;
+		config.Set( "refresh_token", Val( token.RefreshToken() ) ) ;
 		config.Save() ;
                 
                 std::cout << "\n\nToken was succesfully accepted and saved. To start working with the program run grive2 without any options for start full synchronize. \nFor file list setup which will be loaded, read readme.\n";
@@ -281,7 +254,7 @@ int Main( int argc, char **argv )
 	catch ( Exception& e )
 	{
 		Log(
-			"Please run grive2 with the \"-a\" option if this is the "
+			"Please run grive with the \"-a\" option if this is the "
 			"first time you're accessing your Google Drive!",
 			log::critical ) ;
 		
@@ -290,12 +263,13 @@ int Main( int argc, char **argv )
 	
 	OAuth2 token( refresh_token, client_id, client_secret ) ;
 	AuthAgent agent( token, std::auto_ptr<http::Agent>( new http::CurlAgent ) ) ;
-
+	v2::Syncer2 syncer( &agent );
         
+        //--------------------------------------
         if ( vm.count( "list" ) != 0 ){// remote files list
             
         
-            std::vector<std::string> out=    GetDriveFilenames(&agent);
+            std::vector<std::string> out=    GetDriveFilenames(syncer,&agent);
             
             for(std::vector<std::string>::iterator i=out.begin();i!=out.end();i++){
                 //Log("%1%",*i);
@@ -340,16 +314,17 @@ int Main( int argc, char **argv )
             std::string line;
                 while (getline(is, line, '\n'))
                 {
-                    int ssp=line.find("/",1);
-                    std::string rt=line.substr(0,ssp);
-                    line=line.replace(0,ssp,".");
+//                    int ssp=line.find("/",1);
+//                    std::string rt=line.substr(0,ssp);
+//                    line=line.replace(0,ssp,".");
                   exclude_file.push_back (line);
                    
                 }
-
-
+            
+            //---------------------------------
         
-	Drive drive( &agent, config.GetAll() ) ;
+
+	Drive drive( &syncer, config.GetAll() ) ;
 	drive.DetectChanges() ;
 
 	if ( vm.count( "dry-run" ) == 0 )
@@ -359,8 +334,6 @@ int Main( int argc, char **argv )
 	}
 	else
 		drive.DryRun() ;
-        
-
 	
 	config.Save() ;
 	Log( "Finished!", log::info ) ;

@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	REST API Syncer implementation
+	Copyright (C) 2015  Vitaliy Filippov
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -20,29 +17,36 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include "JsonResponse.hh"
+#pragma once
 
-#include "protocol/Json.hh"
+#include "base/Syncer.hh"
 
-namespace gr { namespace http {
+namespace gr {
 
-JsonResponse::JsonResponse()
+class Feed;
+
+namespace v2 {
+
+class Syncer2: public Syncer
 {
-}
 
-std::size_t JsonResponse::Write( const char *data, std::size_t count )
-{
-	return m_resp.Write( data, count ) ;
-}
+public :
 
-std::size_t JsonResponse::Read( char *data, std::size_t count )
-{
-	return count ;
-}
+	Syncer2( http::Agent *http );
 
-Json JsonResponse::Response() const
-{
-	return Json::Parse( m_resp.Response() ) ;
-}
+	void DeleteRemote( Resource *res );
+	bool EditContent( Resource *res, bool new_rev );
+	bool Create( Resource *res );
 
-} } // end of namespace
+	std::auto_ptr<Feed> GetFolders();
+	std::auto_ptr<Feed> GetAll();
+	std::auto_ptr<Feed> GetChanges( long min_cstamp );
+	long GetChangeStamp( long min_cstamp );
+
+private :
+
+	bool Upload( Resource *res );
+
+} ;
+
+} } // end of namespace gr::v2

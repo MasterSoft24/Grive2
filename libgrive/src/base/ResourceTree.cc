@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -19,22 +16,21 @@
 	along with this program; if not, write to the Free Software
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-#include "ResourceTree.hh"
-#include "CommonUri.hh"
 
-#include "protocol/Json.hh"
+#include "ResourceTree.hh"
+
 #include "util/Destroy.hh"
 #include "util/log/Log.hh"
 
 #include <algorithm>
 #include <cassert>
 
-namespace gr { namespace v1 {
+namespace gr {
 
 using namespace details ;
 
 ResourceTree::ResourceTree( const fs::path& rootFolder ) :
-    m_root(new Resource(rootFolder))
+	m_root( new Resource( rootFolder ) )
 {
 	m_set.insert( m_root ) ;
 }
@@ -46,7 +42,7 @@ ResourceTree::ResourceTree( const ResourceTree& fs ) :
 	for ( Set::const_iterator i = s.begin() ; i != s.end() ; ++i )
 	{
 		Resource *c = new Resource( **i ) ;
-		if ( c->SelfHref() == root_href )
+		if ( c->IsRoot() )
 			m_root = c ;
 		
 		m_set.insert( c ) ;
@@ -80,18 +76,6 @@ const Resource* ResourceTree::Root() const
 {
 	assert( m_root != 0 ) ;
 	return m_root ;
-}
-
-void ResourceTree::Swap( ResourceTree& fs )
-{
-	m_set.swap( fs.m_set ) ;
-}
-
-ResourceTree& ResourceTree::operator=( const ResourceTree& fs )
-{
-	ResourceTree tmp( fs ) ;
-	Swap( tmp ) ;
-	return *this ;
 }
 
 Resource* ResourceTree::FindByHref( const std::string& href )
@@ -157,4 +141,4 @@ ResourceTree::iterator ResourceTree::end()
 	return m_set.get<ByIdentity>().end() ;
 }
 
-} } // end of namespace gr::v1
+} // end of namespace gr

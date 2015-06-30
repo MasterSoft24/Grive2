@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	REST API item list ("Feed") implementation
+	Copyright (C) 2015  Vitaliy Filippov
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -22,41 +19,19 @@
 
 #pragma once
 
-#include "json/Val.hh"
+#include "base/Feed.hh"
+
 #include "util/Exception.hh"
 
 #include <string>
 
-namespace gr
-{
-namespace http
-{
-	class Agent ;
-	class Header ;
-}
+namespace gr { namespace v2 {
 
-class Val ;
-
-namespace v2 {
-
-class Feed
+class Feed2: public Feed
 {
 public :
-	// exception info
-	typedef boost::error_info<struct DriveFeed,	Val>	DriveFeed_ ;
-
-public :
-	Feed( const std::string& base ) ;
-	void Query( const std::string& field, const std::string& value ) ;
-	
-	
-	bool Next( http::Agent *agent ) ;
-
-	Val Content() const ;
-
-private :
-	std::string	m_base ;
-	Val 		m_content ;
+	Feed2( const std::string& url ) ;
+	bool GetNext( http::Agent *http ) ;
 } ;
 
 } } // end of namespace gr::v2

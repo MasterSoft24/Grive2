@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	REST API item class implementation
+	Copyright (C) 2015  Vitaliy Filippov
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -22,28 +19,20 @@
 
 #pragma once
 
-#include "util/DataStream.hh"
-#include "http/StringResponse.hh"
+#include "base/Entry.hh"
 
-namespace gr
-{
-	class Json ;
-}
+namespace gr {
 
-namespace gr { namespace http {
+class Val ;
 
-class JsonResponse : public DataStream
+namespace v2 {
+
+class Entry2: public Entry
 {
 public :
-	JsonResponse() ;
-
-	std::size_t Write( const char *data, std::size_t count ) ;
-	std::size_t Read( char *data, std::size_t count ) ;
-
-	Json Response() const ;
-	
+	explicit Entry2( const Val& item ) ;
 private :
-	StringResponse	m_resp ;
+	void Update( const Val& item ) ;
 } ;
 
-} } // end of namespace
+} } // end of namespace gr::v2

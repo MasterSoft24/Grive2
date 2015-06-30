@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
-	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
+	grive: an GPL program to sync a local directory with Google Drive
+	Copyright (C) 2013 Wan Wai Ho
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -17,11 +14,13 @@
 
 	You should have received a copy of the GNU General Public License
 	along with this program; if not, write to the Free Software
-	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+	MA  02110-1301, USA.
 */
 
 #pragma once
 
+#include "Val.hh"
 #include "ValVisitor.hh"
 #include <memory>
 
@@ -54,6 +53,8 @@ private :
 	struct Impl ;
 	std::auto_ptr<Impl>	m_impl ;
 } ;
+
+std::string WriteJson( const Val& val );
 
 } // end of namespace
 

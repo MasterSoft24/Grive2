@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -22,10 +19,9 @@
 
 #pragma once
 
-#include "State.hh"
+#include "base/State.hh"
 
-#include "http/Header.hh"
-#include "protocol/Json.hh"
+#include "json/Val.hh"
 #include "util/Exception.hh"
 
 #include <string>
@@ -33,19 +29,16 @@
 
 namespace gr {
 
-namespace http
-{
-	class Agent ;
-}
-
-namespace v1 {
+class Syncer ;
 
 class Entry ;
+
+class State ;
 
 class Drive
 {
 public :
-	Drive( http::Agent *agent, const Json& options ) ;
+	Drive( Syncer *syncer, const Val& options ) ;
 
 	void DetectChanges() ;
 	void Update() ;
@@ -56,17 +49,15 @@ public :
 	
 private :
 	void SyncFolders( ) ;
-    void file();
 	void FromRemote( const Entry& entry ) ;
 	void FromChange( const Entry& entry ) ;
 	void UpdateChangeStamp( ) ;
 	
 private :
-	http::Agent 	*m_http ;
-	std::string		m_resume_link ;
+	Syncer			*m_syncer ;
 	fs::path		m_root ;
 	State			m_state ;
-	Json			m_options ;
+	Val				m_options ;
 } ;
 
-} } // end of namespace
+} // end of namespace gr

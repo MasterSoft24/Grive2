@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	Common URIs for the old "Document List" Google Docs API
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -34,6 +31,4 @@ namespace gr { namespace v1
 		"https://docs.google.com/feeds/default/private/full/folder%3Aroot" ;
 	const std::string root_create =
 		"https://docs.google.com/feeds/upload/create-session/default/private/full" ;
-	
-	std::string ChangesFeed( int changestamp ) ;
 } }

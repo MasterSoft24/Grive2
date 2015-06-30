@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -24,26 +21,27 @@
 
 #include "Entry.hh"
 #include "Resource.hh"
-#include "CommonUri.hh"
+#include "Syncer.hh"
 
-#include "http/Agent.hh"
 #include "util/Crypt.hh"
 #include "util/File.hh"
 #include "util/log/Log.hh"
-#include "protocol/Json.hh"
+#include "json/Val.hh"
+#include "json/JsonParser.hh"
 
 #include <fstream>
 
-namespace gr { namespace v1 {
+namespace gr {
 
-State::State( const fs::path& filename, const Json& options  ) :
-    m_res		( options["path"].Str() ),
+State::State( const fs::path& filename, const Val& options  ) :
+	m_res		( options["path"].Str() ),
+	m_dir		( options["dir"].Str() ),
 	m_cstamp	( -1 )
 {
 	Read( filename ) ;
 	
 	// the "-f" option will make grive always thinks remote is newer
-	Json force ;
+	Val force ;
 	if ( options.Get("force", force) && force.Bool() )
 		m_last_sync = DateTime() ;
 	
@@ -63,7 +61,8 @@ void State::FromLocal( const fs::path& p )
 
 bool State::IsIgnore( const std::string& filename )
 {
-	return filename[0] == '.' ;
+        //return filename[0] == '.' ;// all hidden files is ignore
+	return filename == ".grive" || filename == ".grive_state" || filename == ".trash" || filename ==".include" || filename==".exclude";
 }
 
 void State::FromLocal( const fs::path& p, Resource* folder )
@@ -77,29 +76,35 @@ void State::FromLocal( const fs::path& p, Resource* folder )
 	for ( fs::directory_iterator i( p ) ; i != fs::directory_iterator() ; ++i )
 	{
 		std::string fname = i->path().filename().string() ;
+		fs::file_status st = fs::status(i->path());
 	
 		if ( IsIgnore(fname) )
 			Log( "file %1% is ignored by grive", fname, log::verbose ) ;
 		
+		// check if it is ignored
+		else if ( folder == m_res.Root() && m_dir != "" && fname != m_dir )
+			Log( "%1% %2% is ignored", st.type() == fs::directory_file ? "folder" : "file", fname, log::verbose );
+		
 		// check for broken symblic links
-		else if ( !fs::exists( i->path() ) )
+		else if ( st.type() == fs::file_not_found )
 			Log( "file %1% doesn't exist (broken link?), ignored", i->path(), log::verbose ) ;
 		
 		else
 		{
+			bool is_dir = st.type() == fs::directory_file;
 			// if the Resource object of the child already exists, it should
 			// have been so no need to do anything here
 			Resource *c = folder->FindChild( fname ) ;
 			if ( c == 0 )
 			{
-				c = new Resource( fname, fs::is_directory(i->path()) ? "folder" : "file" ) ;
+				c = new Resource( fname, is_dir ? "folder" : "file" ) ;
 				folder->AddChild( c ) ;
 				m_res.Insert( c ) ;
 			}
 			
-			c->FromLocal( m_last_sync ) ;			
+			c->FromLocal( m_last_sync ) ;
 			
-			if ( fs::is_directory( i->path() ) )
+			if ( is_dir )
 				FromLocal( *i, c ) ;
 		}
 	}
@@ -107,28 +112,31 @@ void State::FromLocal( const fs::path& p, Resource* folder )
 
 void State::FromRemote( const Entry& e )
 {
-	std::string fn = e.Filename() ;				
+	std::string fn = e.Filename() ;
+	std::string k = e.IsDir() ? "folder" : "file";
 
 	if ( IsIgnore( e.Name() ) )
-		Log( "%1% %2% is ignored by grive", e.Kind(), e.Name(), log::verbose ) ;
+		Log( "%1% %2% is ignored by grive", k, e.Name(), log::verbose ) ;
+
+	// check if it is ignored
+	else if ( e.ParentHref() == m_res.Root()->SelfHref() && m_dir != "" && e.Name() != m_dir )
+		Log( "%1% %2% is ignored", k, e.Name(), log::verbose );
 
 	// common checkings
-	else if ( e.Kind() != "folder" && (fn.empty() || e.ContentSrc().empty()) )
-		Log( "%1% \"%2%\" is a google document, ignored", e.Kind(), e.Name(), log::verbose ) ;
+	else if ( !e.IsDir() && (fn.empty() || e.ContentSrc().empty()) )
+		Log( "%1% \"%2%\" is a google document, ignored", k, e.Name(), log::verbose ) ;
 	
 	else if ( fn.find('/') != fn.npos )
-		Log( "%1% \"%2%\" contains a slash in its name, ignored", e.Kind(), e.Name(), log::verbose ) ;
+		Log( "%1% \"%2%\" contains a slash in its name, ignored", k, e.Name(), log::verbose ) ;
 	
 	else if ( !e.IsChange() && e.ParentHrefs().size() != 1 )
-		Log( "%1% \"%2%\" has multiple parents, ignored", e.Kind(), e.Name(), log::verbose ) ;
+		Log( "%1% \"%2%\" has multiple parents, ignored", k, e.Name(), log::verbose ) ;
 
 	else if ( e.IsChange() )
 		FromChange( e ) ;
 
 	else if ( !Update( e ) )
-	{
 		m_unresolved.push_back( e ) ;
-	}
 }
 
 void State::ResolveEntry()
@@ -167,7 +175,7 @@ void State::FromChange( const Entry& e )
 	
 	// entries in the change feed is always treated as newer in remote,
 	// so we override the last sync time to 0
-	if ( Resource *res = m_res.FindByHref( e.AltSelf() ) )
+	if ( Resource *res = m_res.FindByHref( e.SelfHref() ) )
 		m_res.Update( res, e, DateTime() ) ;
 }
 
@@ -196,10 +204,10 @@ bool State::Update( const Entry& e )
 		
 		// folder entry exist in google drive, but not local. we should create
 		// the directory
-		else if ( e.Kind() == "folder" || !e.Filename().empty() )
+		else if ( e.IsDir() || !e.Filename().empty() )
 		{
 			// first create a dummy resource and update it later
-			child = new Resource( name, e.Kind() ) ;
+			child = new Resource( name, e.IsDir() ? "folder" : "file" ) ;
 			parent->AddChild( child ) ;
 			m_res.Insert( child ) ;
 			
@@ -233,9 +241,10 @@ void State::Read( const fs::path& filename )
 	try
 	{
 		File file( filename ) ;
-		Json json = Json::Parse( &file ) ;
-		
-		Json last_sync = json["last_sync"] ;
+
+		Val json = ParseJson( file );
+
+		Val last_sync = json["last_sync"] ;
 		m_last_sync.Assign(
 			last_sync["sec"].Int(),
 			last_sync["nsec"].Int() ) ;
@@ -250,19 +259,19 @@ void State::Read( const fs::path& filename )
 
 void State::Write( const fs::path& filename ) const
 {
-	Json last_sync ;
-	last_sync.Add( "sec",	Json(m_last_sync.Sec() ) );
-	last_sync.Add( "nsec",	Json(m_last_sync.NanoSec() ) );
+	Val last_sync ;
+	last_sync.Add( "sec",	Val( (int)m_last_sync.Sec() ) );
+	last_sync.Add( "nsec",	Val( (unsigned)m_last_sync.NanoSec() ) );
 	
-	Json result ;
+	Val result ;
 	result.Add( "last_sync", last_sync ) ;
-	result.Add( "change_stamp", Json(m_cstamp) ) ;
+	result.Add( "change_stamp", Val(m_cstamp) ) ;
 	
 	std::ofstream fs( filename.string().c_str() ) ;
 	fs << result ;
 }
 
-void State::Sync( http::Agent *http, const Json& options )
+void State::Sync( Syncer *syncer, const Val& options )
 {
 	// set the last sync time from the time returned by the server for the last file synced
 	// if the sync time hasn't changed (i.e. now files have been uploaded)
@@ -272,7 +281,7 @@ void State::Sync( http::Agent *http, const Json& options )
 	// TODO - WARNING - do we use the last sync time to compare to client file times
 	// need to check if this introduces a new problem
  	DateTime last_sync_time = m_last_sync;
-	m_res.Root()->Sync( http, last_sync_time, options ) ;
+	m_res.Root()->Sync( syncer, last_sync_time, options ) ;
 	
   	if ( last_sync_time == m_last_sync )
   	{
@@ -297,4 +306,4 @@ void State::ChangeStamp( long cstamp )
 	m_cstamp = cstamp ;
 }
 
-} } // end of namespace gr::v1
+} // end of namespace gr

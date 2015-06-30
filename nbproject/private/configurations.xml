@@ -2,20 +2,40 @@
 <configurationDescriptor version="95">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <df root="/home/ms/NetBeansProjects/grive" name="0">
-      <df name="bgrive">
-      </df>
       <df name="build">
         <df name="CMakeFiles">
           <df name="3.0.2">
             <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
             </df>
             <df name="CompilerIdCXX">
+              <in>CMakeCXXCompilerId.cpp</in>
+            </df>
+          </df>
+          <df name="3.2.2">
+            <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
+            </df>
+            <df name="CompilerIdCXX">
+              <in>CMakeCXXCompilerId.cpp</in>
+            </df>
+          </df>
+          <df name="3.2.3">
+            <df name="CompilerIdC">
+              <in>CMakeCCompilerId.c</in>
+            </df>
+            <df name="CompilerIdCXX">
+              <in>CMakeCXXCompilerId.cpp</in>
             </df>
           </df>
           <df name="CMakeTmp">
           </df>
+          <in>feature_tests.c</in>
+          <in>feature_tests.cxx</in>
         </df>
         <df name="grive">
+          <df name="1">
+          </df>
           <df name="CMakeFiles">
             <df name="grive_executable.dir">
               <df name="src">
@@ -33,6 +53,10 @@
             </df>
             <df name="grive.dir">
               <df name="src">
+                <df name="base">
+                </df>
+                <df name="bfd">
+                </df>
                 <df name="drive">
                 </df>
                 <df name="drive2">
@@ -67,10 +91,26 @@
             <in>CMakeCXXCompilerId.cpp</in>
           </df>
         </df>
+        <df name="3.2.3">
+          <df name="CompilerIdC">
+            <in>CMakeCCompilerId.c</in>
+          </df>
+          <df name="CompilerIdCXX">
+            <in>CMakeCXXCompilerId.cpp</in>
+          </df>
+        </df>
         <df name="CMakeTmp">
         </df>
+        <in>feature_tests.c</in>
+        <in>feature_tests.cxx</in>
       </df>
       <df name="grive">
+        <df name="CMakeFiles">
+          <df name="grive_executable.dir">
+            <df name="src">
+            </df>
+          </df>
+        </df>
         <df name="doc">
         </df>
         <df name="src">
@@ -94,7 +134,55 @@
         </df>
       </df>
       <df name="libgrive">
+        <df name="CMakeFiles">
+          <df name="btest.dir">
+            <df name="test">
+              <df name="btest">
+              </df>
+            </df>
+          </df>
+          <df name="grive.dir">
+            <df name="src">
+              <df name="base">
+              </df>
+              <df name="bfd">
+              </df>
+              <df name="drive">
+              </df>
+              <df name="drive2">
+              </df>
+              <df name="http">
+              </df>
+              <df name="json">
+              </df>
+              <df name="protocol">
+              </df>
+              <df name="util">
+                <df name="log">
+                </df>
+              </df>
+              <df name="xml">
+              </df>
+            </df>
+          </df>
+        </df>
         <df name="src">
+          <df name="base">
+            <in>Drive.cc</in>
+            <in>Drive.hh</in>
+            <in>Entry.cc</in>
+            <in>Entry.hh</in>
+            <in>Feed.cc</in>
+            <in>Feed.hh</in>
+            <in>Resource.cc</in>
+            <in>Resource.hh</in>
+            <in>ResourceTree.cc</in>
+            <in>ResourceTree.hh</in>
+            <in>State.cc</in>
+            <in>State.hh</in>
+            <in>Syncer.cc</in>
+            <in>Syncer.hh</in>
+          </df>
           <df name="bfd">
             <in>Addr.hh</in>
             <in>Backtrace.cc</in>
@@ -108,26 +196,29 @@
             <in>CommonUri.cc</in>
             <in>CommonUri.hh</in>
             <in>Drive.cc</in>
-            <in>Drive.hh</in>
             <in>Entry.cc</in>
-            <in>Entry.hh</in>
+            <in>Entry1.cc</in>
+            <in>Entry1.hh</in>
             <in>Feed.cc</in>
-            <in>Feed.hh</in>
+            <in>Feed1.cc</in>
+            <in>Feed1.hh</in>
             <in>Resource.cc</in>
-            <in>Resource.hh</in>
             <in>ResourceTree.cc</in>
-            <in>ResourceTree.hh</in>
             <in>State.cc</in>
-            <in>State.hh</in>
+            <in>Syncer1.cc</in>
+            <in>Syncer1.hh</in>
           </df>
           <df name="drive2">
             <in>CommonUri.hh</in>
             <in>Drive.cc</in>
-            <in>Drive.hh</in>
+            <in>Entry2.cc</in>
+            <in>Entry2.hh</in>
             <in>Feed.cc</in>
-            <in>Feed.hh</in>
+            <in>Feed2.cc</in>
+            <in>Feed2.hh</in>
             <in>Resource.cc</in>
-            <in>Resource.hh</in>
+            <in>Syncer2.cc</in>
+            <in>Syncer2.hh</in>
           </df>
           <df name="http">
             <in>Agent.hh</in>
@@ -162,9 +253,7 @@
             <in>AuthAgent.cc</in>
             <in>AuthAgent.hh</in>
             <in>Json.cc</in>
-            <in>Json.hh</in>
             <in>JsonResponse.cc</in>
-            <in>JsonResponse.hh</in>
             <in>OAuth2.cc</in>
             <in>OAuth2.hh</in>
           </df>
@@ -231,6 +320,14 @@
             </df>
           </df>
           <df name="drive">
+            <in>EntryTest.cc</in>
+            <in>EntryTest.hh</in>
+            <in>ResourceTest.cc</in>
+            <in>ResourceTest.hh</in>
+            <in>ResourceTreeTest.cc</in>
+            <in>ResourceTreeTest.hh</in>
+            <in>StateTest.cc</in>
+            <in>StateTest.hh</in>
           </df>
           <df name="http">
             <in>MockAgent.cc</in>
@@ -255,8 +352,6 @@
         </df>
       </df>
       <df name="package">
-        <df name="arch">
-        </df>
         <df name="fedora16">
         </df>
       </df>
@@ -306,8 +401,10 @@
           <runcommandpicklistitem>"${OUTPUT_PATH}" </runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
           <runcommandpicklistitem>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" --help</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" --version</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}" -p /home/ms/GoogleDrive</runcommand>
+        <runcommand>"${OUTPUT_PATH}" --version</runcommand>
         <rundir>.</rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>

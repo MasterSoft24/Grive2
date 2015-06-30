@@ -1,9 +1,6 @@
 /*
-	grive2: an GPL program to sync a local directory with Google Drive
-	Forked from grive project
-	
+	grive: an GPL program to sync a local directory with Google Drive
 	Copyright (C) 2012  Wan Wai Ho
-	Copyright (C) 2014  Vladimir Kamensky
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License
@@ -235,18 +232,15 @@ long CurlAgent::Get(
 
 long CurlAgent::Post(
 	const std::string& 		url,
-	const std::string&		data,
+	const std::string&		post_data,
 	DataStream				*dest,
 	const Header&			hdr )
 {
-	Trace("HTTP POST \"%1%\" with \"%2%\"", url, data ) ;
+	Trace("HTTP POST \"%1%\" with \"%2%\"", url, post_data ) ;
 
 	Init() ;
 	CURL *curl = m_pimpl->curl ;
 
-	// make a copy because the parameter is const
-	std::string post_data = data ;
-	
 	// set post specific options
 	::curl_easy_setopt(curl, CURLOPT_POST, 			1L);
 	::curl_easy_setopt(curl, CURLOPT_POSTFIELDS,	&post_data[0] ) ;
