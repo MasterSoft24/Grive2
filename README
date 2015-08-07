@@ -26,6 +26,9 @@ You need the following libraries:
 - libstdc++
 - libgcrypt
 - Boost (Boost filesystem and program_option are required)
+- Expat
+
+For some distributions, such as Fedora, you may need to install devel packages.
 
 There are also some optional dependencies:
 - CppUnit (for unit tests)

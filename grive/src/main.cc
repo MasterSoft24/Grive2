@@ -176,7 +176,7 @@ int Main( int argc, char **argv )
 	InitGCrypt() ;
 	
 	// construct the program options
-	po::options_description desc( "Grive options" );
+	po::options_description desc( "Grive2  options" );
 	desc.add_options()
 		( "help,h",		"Produce help message" )
 		( "version,v",	"Display Grive version" )
