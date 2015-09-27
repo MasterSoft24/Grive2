@@ -1,12 +1,13 @@
 Grive2 v0.3
 30 Juny 2015
 
- http://mastersoft24.github.io/Grive2
 
-This is the fork of original "Grive" (https://github.com/Grive/grive) Google Drive client
-with the support for the new Drive REST API and partial sync.
+This fork based on grive2 repository (https://github.com/vitalif/grive2) and original grive.
+Google Drive client with the support for the new Drive REST API and black and white lists.
 
-Grive2 can be considered still beta quality. It simply downloads selected files in your
+
+
+It simply downloads selected files in your
 Google Drive into the current directory. After you make some changes to the local files, run
 grive again and it will upload your changes back to your Google Drive. New files created locally
 or in Google Drive will be uploaded or downloaded respectively. Deleted files will also be "removed".
@@ -43,9 +44,7 @@ Grive uses cmake to build. Basic install sequence is
     make -j4
     sudo make install
 
- http://mastersoft24.github.io/Grive2/installation
 
-...for detailed procedures to compile Grive2.
 
 When Grive2 is run for the first time, you should use the "-a" argument to grant
 permission to Grive2 to access to your Google Drive. A URL should be printed.
@@ -58,10 +57,12 @@ current directory.
 
 
 After that, you can either run grive2 for full synchronization
-or create the file .exclude and add the full path of the files that should be 
-excluded from synchronization. 
-Alternatively, you may create .include file and add files what you want to sync. 
-For use this feature you must use --use-include parameter
+or:
+- create the file .exclude and add the relative path of the files that should be 
+  excluded from synchronization. 
+- Alternatively, you may create .include file and add files what you want to sync.
+  For use this feature you must use --use-include parameter
+
 To simplify somewhat the operation, you can run with the option grive2 --list 
 and get a list of all the files in your Google drive
 
